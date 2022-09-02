@@ -1,0 +1,35 @@
+<template>
+<NavBar></NavBar>
+<h1>Mira los platos que ofrecemos</h1>
+<h2>Antojate con los platos disponibles en el menu</h2>
+<Plato/>
+<Plato/>
+<Plato/>
+<Plato/>
+
+
+<Footer></Footer>
+
+</template>
+<script>
+import NavBar from "@/components/NavBar.vue";
+import Plato from "@/components/plato.vue";
+
+
+import Footer from "@/components/footer.vue";
+
+
+export default {
+        name:'Platos',
+        components:{
+    
+    NavBar,
+    Plato,
+    Footer
+}
+}
+
+</script>
+<style>
+    
+</style>
