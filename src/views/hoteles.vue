@@ -28,3 +28,10 @@
     
     
     </script>
+
+    <style>
+        .navbar{
+        background: #78E3FD;
+        height: 100px;
+    }
+    </style>
