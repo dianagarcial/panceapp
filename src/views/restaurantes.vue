@@ -1,11 +1,13 @@
 <template>
     <NavBar></NavBar>
+    <div id="contenido">
     <h1>Explora los restaurantes disponibles</h1>
     <h2>Selecciona uno de los restaurantes</h2>
     <TarjetaRestaurante/>
     <TarjetaRestaurante/>
     <TarjetaRestaurante/>
     <TarjetaRestaurante/>
+    </div>
     <Footer></Footer>
 
 </template>

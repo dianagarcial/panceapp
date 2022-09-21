@@ -1,11 +1,13 @@
 <template>
     <NavBar></NavBar>
+    <div id="contenido">
     <h1>Reserva en uno de nuestros hoteles</h1>
     <h2>Alojate en uno de nuestros hoteles</h2>
     <TarjetaHotel/>
     <TarjetaHotel/>
     <TarjetaHotel/>
     <TarjetaHotel/>
+</div>
     <Footer></Footer>
 
 </template>
@@ -30,8 +32,5 @@
     </script>
 
     <style>
-        .navbar{
-        background: #78E3FD;
-        height: 100px;
-    }
+        
     </style>

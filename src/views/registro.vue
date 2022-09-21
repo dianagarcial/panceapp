@@ -1,5 +1,6 @@
 <template>
     <NavBar></NavBar>
+    <div id="contenido">
     <h1>Registrate</h1>
     <h2>Registrate para obtener beneficios</h2>
     <h3>Nombre Completo</h3>
@@ -16,6 +17,7 @@
     <input/>
     <Boton></Boton>
     <Boton></Boton>
+    </div>
     <Footer></Footer>
 
 

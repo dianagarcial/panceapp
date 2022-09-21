@@ -1,5 +1,6 @@
 <template>
     <NavBar></NavBar>
+    <div id="contenido">
     <img/>
     
     <h1>Hotel Pance 1</h1>
@@ -16,6 +17,7 @@
     <Comentarios/>
     <Mapa/>
     <Reserva/>
+    </div>
     
     <Footer></Footer>
 
