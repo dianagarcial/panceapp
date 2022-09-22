@@ -1,17 +1,17 @@
 <template>
    
     <div id="tarjeta-plan">
-
-       <img id="foto-plan" src="https://i.ibb.co/vj3ntfd/Frame-2-1.png" alt="Frame-2"/>
+       
+       <img id="foto-plan" src="https://i.ibb.co/qBYyw37/Frame-2-2.png" alt="Frame-2"/>
        <div id="conte-tarjeta-plan">
             <h3 id="tarj3">{{titulo}}</h3>
-            <h4 id="tarj4">${{subtitulo}}/Noche</h4>
-            <h5 id="tarj5">Noches</h5>
+            <h4 id="tarj4">${{subtitulo}}</h4>
+            <h5 id="tarj5">Cantidad</h5>
             <sumaResta></sumaResta>
         </div> 
 
        <div id="btn-ent">
-        <button id="btn-ent">Reservar</button>
+        <button id="btn-ent">Pedir</button>
 
        </div>
         
