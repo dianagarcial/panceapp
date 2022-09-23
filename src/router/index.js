@@ -59,7 +59,7 @@ const routes = [
       },
       {
         path: '/registro',
-        name: 'VerHoteles',
+        name: 'Registro',
         component:() =>import('../views/registro.vue')
       },
       {

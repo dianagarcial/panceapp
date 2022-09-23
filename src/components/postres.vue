@@ -3,10 +3,11 @@
     <div id="contenidoPostre" display="none">
     <h1>Postres</h1>
     <h2>Selecciona uno de los platos a continuacion</h2>
-        <Pgeneral titulo="Postre1" subtitulo="60.000" />
-    <Pgeneral titulo="Postre2" subtitulo="70.000"/>
-    <Pgeneral titulo="Postre3" subtitulo="80.000"/>
-    <Pgeneral titulo="Postre4" subtitulo="90.000"/>
+    <Pgeneral v-for="(producto, key) in productos" 
+        :key="key"
+        :titulo="producto.titulo"
+        :subtitulo="producto.subtitulo"
+        :imagen="producto.imagen"/>
 </div>
   
 </template>
@@ -17,6 +18,33 @@
     
     export default {
         name:'Postres',
+        data() {
+            return {
+                productos: [
+                    {
+                        titulo: 'Postre1',
+                        subtitulo: '60.000',
+   
+                        imagen: 'https://i.ibb.co/9tZ6QKC/Frame-2-8.png'
+
+                    },
+                    {
+                        titulo: 'Postre2',
+                        subtitulo: '70.000',
+                        imagen: 'https://i.ibb.co/sjgT0PS/Frame-2-9.png'
+
+                    },
+                    {
+                        titulo: 'Postre3',
+                        subtitulo: '80.000',
+           
+                        imagen: 'https://i.ibb.co/vdkygNL/Frame-2-10.png'
+                        
+                    }
+                ]
+            }
+        },
+
         components:{
     
             Pgeneral

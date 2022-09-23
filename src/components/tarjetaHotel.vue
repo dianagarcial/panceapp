@@ -11,7 +11,7 @@
         </div> 
 
        <div id="btn-ent">
-        <button id="btn-ent">Reservar</button>
+        <button id="btn-ent" @click="entrar">Reservar</button>
 
        </div>
         
@@ -34,7 +34,11 @@
     },
     components:{
         sumaResta
-    }
+    },methods:{
+            entrar(){
+                this.$router.push('/verHotel') 
+            }
+        }
     
     }
  </script>

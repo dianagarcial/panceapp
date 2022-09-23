@@ -2,7 +2,7 @@
    
     <div id="tarjeta-plan">
        
-       <img id="foto-plan" src="https://i.ibb.co/qBYyw37/Frame-2-2.png" alt="Frame-2"/>
+       <img id="foto-plan" :src="imgSrc" alt="Frame-2"/>
        <div id="conte-tarjeta-plan">
             <h3 id="tarj3">{{titulo}}</h3>
             <h4 id="tarj4">${{subtitulo}}</h4>
@@ -12,17 +12,13 @@
 
        <div id="btn-ent">
         <button id="btn-ent">Pedir</button>
-
        </div>
-        
-        
+              
 
     </div>
-   
- 
+    
  </template>
- 
- <script>
+  <script>
     import sumaResta from "@/components/suma-resta.vue";
     export default {
     name:'tarjetaPlan',
@@ -31,6 +27,11 @@
         subtitulo: String,
         imagen: String
 
+    },
+    data() {
+        return {
+            imgSrc: this.imagen
+        }
     },
     components:{
         sumaResta
