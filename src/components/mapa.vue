@@ -1,10 +1,12 @@
 <template>
-    <div classname="mapa">
-        <img id="imgc" scr="https://i.ibb.co/xMQ8dpV/Frame-5.png" alt="mapa" />
-        <div classname="mapa-conte">
+    <div id="mapa">
+      
+   <img :src="imgSrc" alt="Frame-5">
+        <div id="mapa-conte">
             <h1>Llegar es muy facil</h1>
             <h2>{{indicacion}}</h2>
             <h2>{{direccion}}</h2>
+            <button id="ir">Llevame</button>
         </div>
     </div>
 </template>
@@ -33,9 +35,23 @@
 
         background: #EEEEEE;
         border-radius: 15px;
+        margin-top: 2%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2%;
+        padding: 2%;
     }
     img#mapa-imagen{
         width: 100%;
     }
+    div#mapa-conte {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    align-content: center;
+    margin-left: 5%;
+}
 
  </style>

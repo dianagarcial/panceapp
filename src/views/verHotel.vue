@@ -27,8 +27,9 @@
         :fecha="comentario.fecha"
         :imagen="comentario.imagen"/>
     </div>
-    <Mapa imagen=""
-    indicacion="Estamos ubicados en la panamericana"/>
+    <Mapa imagen="https://i.ibb.co/xMQ8dpV/Frame-5.png" 
+    indicacion="Estamos ubicados en la panamericana"
+    direccion="Calle 111 # 77 - 99, Km 4, Cali, Valle del Cauca, Colombia"/>
     <Reserva/>
     </div>
     
