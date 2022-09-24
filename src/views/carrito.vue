@@ -11,13 +11,19 @@
         :subtotal="carrito.subtotal"
         :total="carrito.total"
         :imagen="carrito.imagen"/>
-    <Boton></Boton>
+    <TotalCarrito total="200.000"/>
+    <div id="izq">
+            <button id="retro">Cancelar</button>
+            <button id="ir" >Pagar</button>
+            
+    </div>
     </div>
 </template>
 <script>
 import TarjetaCarrito from "../components/tarjetaCarrito.vue";
-import Boton from "../components/Boton.vue";
+
 import NavBar from "@/components/NavBar.vue";
+import TotalCarrito from "@/components/totalcarrito.vue"
 
 export default {
     name:'Carrito',
@@ -44,7 +50,8 @@ export default {
     components:{
     TarjetaCarrito,
     NavBar,
-    Boton
+    
+    TotalCarrito
     
 }
 
