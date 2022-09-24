@@ -2,7 +2,7 @@
     <NavBar></NavBar>
     <div id="contenido">
     <h1>Carrito de compras</h1>
-    <h2>Este es el carrito</h2>
+   
  
     <TarjetaCarrito v-for="(carrito, key) in carritos" 
         :key="key"
