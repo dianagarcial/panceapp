@@ -2,7 +2,7 @@
    
     <div id="tarjeta-plan">
 
-       <img id="foto-plan" src="https://i.ibb.co/vj3ntfd/Frame-2-1.png" alt="Frame-2"/>
+       <img id="foto-plan" :src="imgSrcP" alt="Frame-2"/>
        <div id="conte-tarjeta-plan">
             <h3 id="tarj3">{{titulo}}</h3>
             <h4 id="tarj4">${{subtitulo}}/Noche</h4>
@@ -31,6 +31,10 @@
         subtitulo: String,
         imagen: String
 
+    },data() {
+        return {
+            imgSrcP: this.imagen
+        }
     },
     components:{
         sumaResta

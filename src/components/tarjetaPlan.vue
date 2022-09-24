@@ -1,10 +1,10 @@
 <template>
    
     <div id="tarjeta-plan">
-       <img id="foto-plan" src="https://i.ibb.co/jRc4y8v/Frame-2.png" alt="Frame-2"/>
+       <img id="foto-plan" :src="imgSrc" alt="Frame-2"/>
        <div id="conte-tarjeta-plan">
             <h3 id="tarj3">{{titulo}}</h3>
-            <h4 id="tarj4">{{subtitulo}}</h4>
+            <h4 id="tarj4">${{subtitulo}}</h4>
             <Estrellas></Estrellas>
         </div> 
 
@@ -29,6 +29,11 @@
         subtitulo: String,
         imagen: String
 
+    },
+    data() {
+        return {
+            imgSrc: this.imagen
+        }
     },
     components:{
         Estrellas

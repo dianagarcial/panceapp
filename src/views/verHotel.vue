@@ -11,15 +11,24 @@
     </div>
     <Servicios></Servicios>
     <h1>Imagenes</h1>
-    <img/>
-    <img/>
-    <img/>
+    <div id="imagenes">
+    <img id="imgc" src="https://i.ibb.co/h8Wb7t5/unsplash-j-Ut4-MJXTJn0-5.png" alt="unsplash-j-Ut4-MJXTJn0-5" />
+    <img id="imgc" src="https://i.ibb.co/HdMZ7R1/unsplash-j-Ut4-MJXTJn0-6.png" alt="unsplash-j-Ut4-MJXTJn0-6" />
+    <img id="imgc" src="https://i.ibb.co/7rDwTZw/unsplash-j-Ut4-MJXTJn0-7.png" alt="unsplash-j-Ut4-MJXTJn0-7"/>
+    </div>
+    
     <h1>Reseñas</h1>
     <h2>Opiniones de otros clientes</h2>
-    <Comentarios/>
-    <Comentarios/>
-    <Comentarios/>
-    <Mapa/>
+    <div id="conte-comentario">
+    <Comentarios v-for="(comentario, key) in comentarios" 
+        :key="key"
+        :nombre="comentario.nombre"
+        :comentario="comentario.comentario"
+        :fecha="comentario.fecha"
+        :imagen="comentario.imagen"/>
+    </div>
+    <Mapa imagen=""
+    indicacion="Estamos ubicados en la panamericana"/>
     <Reserva/>
     </div>
     
@@ -33,11 +42,38 @@
     
     import Footer from "@/components/footer.vue";
 import Servicios from "@/components/Servicios.vue";
-import Comentarios from "../components/Comentarios.vue";
+import Comentarios from "../components/comentario.vue";
 import Mapa from "@/components/mapa.vue";
 import Reserva from "../components/Reserva.vue";
     export default {
         name:'VerHoteles',
+        data(){
+            return{
+                comentarios:[
+                    {
+                        nombre:'Eloise Beier',
+                        comentario:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas tempor cras justo eu eget tristique tellus volutpat. Fringilla mauris nec hac purus nulla nec. Fermentum.',
+                        fecha:'Aug 31 2022 19:00',
+                        imagen:'https://i.ibb.co/5MYt3Pp/Ellipse-1.png'
+                    },
+                    {
+                        nombre:'Brad Stokes',
+                        comentario:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas tempor cras justo eu eget tristique tellus volutpat. Fringilla mauris nec hac purus nulla nec. Fermentum.',
+                        fecha:'Aug 31 2022 19:00',
+                        imagen:'https://i.ibb.co/vdK0n6b/Ellipse-1-1.png'
+
+                    },
+                    {
+                        nombre:'Edmund Pagac',
+                        comentario:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas tempor cras justo eu eget tristique tellus volutpat. Fringilla mauris nec hac purus nulla nec. Fermentum.',
+                        fecha:'Aug 31 2022 19:00',
+                        imagen:'https://i.ibb.co/n3wmj7G/Ellipse-1-2.png'
+
+                    }
+
+                ]
+            }
+        },
         components:{
     NavBar,
     
@@ -63,5 +99,14 @@ import Reserva from "../components/Reserva.vue";
         }
         h1{
             margin-bottom: 0;
+        }
+        div#imagenes{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        img#imgc{
+            width: 30%;
         }
     </style>
