@@ -16,7 +16,7 @@
 <script>
     import NavBar from "@/components/NavBar.vue";
     import TarjetaPlan from "@/components/tarjetaPlan.vue";
-    import Footer from "@/components/footer.vue";
+    import Footer from "@/components/Footer.vue";
     export default {
         name:'Planes',
         data() {

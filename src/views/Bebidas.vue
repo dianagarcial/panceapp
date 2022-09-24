@@ -19,7 +19,7 @@
     import Plato from "@/components/plato.vue";
     import TarjetaPlatos from "@/components/TarjetaPlatos.vue"
     
-    import Footer from "@/components/footer.vue";
+    import Footer from "@/components/Footer.vue";
     
     
     export default {

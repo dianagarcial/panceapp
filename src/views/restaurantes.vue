@@ -25,7 +25,7 @@
     import NavBar from "@/components/NavBar.vue";
     
     import Entradas from "@/components/entradas.vue";
-    import Footer from "@/components/footer.vue";
+    import Footer from "@/components/Footer.vue";
     import PlatoF from "@/components/platoFuerte.vue";
     import Postres from "../components/postres.vue";
 import Bebidas from "../components/bebidas.vue";

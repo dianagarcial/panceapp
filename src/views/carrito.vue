@@ -18,12 +18,14 @@
             
     </div>
     </div>
+    <Footer/>
 </template>
 <script>
 import TarjetaCarrito from "../components/tarjetaCarrito.vue";
 
 import NavBar from "@/components/NavBar.vue";
 import TotalCarrito from "@/components/totalcarrito.vue"
+import Footer from "@/components/Footer.vue";
 
 export default {
     name:'Carrito',
@@ -50,9 +52,8 @@ export default {
     components:{
     TarjetaCarrito,
     NavBar,
-    
-    TotalCarrito
-    
+    TotalCarrito,
+    Footer
 }
 
     }

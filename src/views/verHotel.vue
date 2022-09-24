@@ -41,7 +41,7 @@
 <script>
     import NavBar from "@/components/NavBar.vue";
     
-    import Footer from "@/components/footer.vue";
+    import Footer from "@/components/Footer.vue";
 import Servicios from "@/components/Servicios.vue";
 import Comentarios from "../components/comentario.vue";
 import Mapa from "@/components/mapa.vue";

@@ -8,8 +8,9 @@
     <h3>Contraseña</h3>
     <input type="password"/>
     <div id="izq">
+        <button id="retro" @click="ingreso">Ingresar</button>
             <button id="ir" @click="registro">Registrarse</button>
-            <button id="retro" @click="ingreso">Ingresar</button>
+            
     </div>
     </div>
     <Footer></Footer>
@@ -19,7 +20,7 @@
 <script>
 import NavBar from "@/components/NavBar.vue";
 
-import Footer from "@/components/footer.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
     name:'Iniciosesion',

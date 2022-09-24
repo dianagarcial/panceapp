@@ -17,7 +17,7 @@ import NavBar from "@/components/NavBar.vue";
 import Plato from "@/components/plato.vue";
 
 
-import Footer from "@/components/footer.vue";
+import Footer from "@/components/Footer.vue";
 
 
 export default {

@@ -19,7 +19,7 @@
 import NavBar from "@/components/NavBar.vue";
 
 import Botonprincipal from "@/components/Boton-principal.vue";
-import Footer from "@/components/footer.vue";
+import Footer from "@/components/Footer.vue";
 export default {
     name:'Home',
     components:{

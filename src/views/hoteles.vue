@@ -17,7 +17,7 @@
 <script>
     import NavBar from "@/components/NavBar.vue";
     import TarjetaHotel from "@/components/tarjetaHotel.vue";
-    import Footer from "@/components/footer.vue";
+    import Footer from "@/components/Footer.vue";
     export default {
         name:'Hoteles',
         data() {
