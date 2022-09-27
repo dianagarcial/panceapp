@@ -1,5 +1,4 @@
 <template>
-    <NavBar></NavBar>
     <div id="contenido">
         <div id="conte-vhotel">
             <img id="foto-plan" src="https://i.ibb.co/vj3ntfd/Frame-2-1.png" alt="Frame-2" />
@@ -28,15 +27,14 @@
         <Reserva />
     </div>
 
-    <Footer></Footer>
 
 </template>
 
 
 <script>
-import NavBar from "@/components/NavBar.vue";
 
-import Footer from "@/components/Footer.vue";
+
+
 import Servicios from "@/components/Servicios.vue";
 import Comentarios from "../components/comentario.vue";
 import Mapa from "@/components/mapa.vue";
@@ -71,9 +69,6 @@ export default {
         }
     },
     components: {
-        NavBar,
-
-        Footer,
         Servicios,
         Comentarios,
         Mapa,

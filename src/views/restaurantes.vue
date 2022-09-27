@@ -1,5 +1,4 @@
 <template>
-    <NavBar></NavBar>
     <div id="contenido">
         <h1>Explora los restaurantes disponibles</h1>
         <h2>Selecciona uno de los restaurantes</h2>
@@ -22,14 +21,11 @@
 
 
     </div>
-    <Footer></Footer>
 
 </template>
 <script>
-import NavBar from "@/components/NavBar.vue";
 
 import Entradas from "@/components/entradas.vue";
-import Footer from "@/components/Footer.vue";
 import PlatoF from "@/components/platoFuerte.vue";
 import Postres from "../components/postres.vue";
 import Bebidas from "../components/bebidas.vue";
@@ -45,9 +41,6 @@ export default {
         }
     },
     components: {
-        NavBar,
-
-        Footer,
         Entradas,
         PlatoF,
         Postres,

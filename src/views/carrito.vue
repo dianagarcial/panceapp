@@ -1,27 +1,19 @@
 <template>
-    <NavBar></NavBar>
     <div id="contenido">
         <h1>Carrito de compras</h1>
-
-
         <TarjetaCarrito v-for="(carrito, key) in carritos" :key="key" :nombre="carrito.nombre" :numero="carrito.numero"
             :subtotal="carrito.subtotal" :total="carrito.total" :imagen="carrito.imagen" />
         <TotalCarrito total="200.000" />
         <div id="izq">
             <button id="retro">Cancelar</button>
             <button id="ir">Pagar</button>
-
         </div>
     </div>
-    <Footer />
 </template>
+
 <script>
 import TarjetaCarrito from "../components/tarjetaCarrito.vue";
-
-import NavBar from "@/components/NavBar.vue";
 import TotalCarrito from "@/components/totalcarrito.vue"
-import Footer from "@/components/Footer.vue";
-
 export default {
     name: 'Carrito',
     data() {
@@ -46,13 +38,11 @@ export default {
     },
     components: {
         TarjetaCarrito,
-        NavBar,
-        TotalCarrito,
-        Footer
+        TotalCarrito
     }
-
 }
 </script>
+
 <style>
 
 </style>

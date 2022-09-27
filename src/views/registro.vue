@@ -1,5 +1,4 @@
 <template>
-    <NavBar></NavBar>
     <div id="contenido">
         <h1>Registrate</h1>
         <h2>Registrate para obtener beneficios</h2>
@@ -38,30 +37,19 @@
             <button id="retro" @click="ingreso">Ingresar</button>
         </div>
     </div>
-    <Footer></Footer>
-
-
 </template>
-<script>
-import NavBar from "@/components/NavBar.vue";
 
-import Footer from "@/components/Footer.vue";
+<script>
 export default {
     name: 'Registro',
-    components: {
-
-        NavBar,
-
-        Footer
-    }, methods: {
+    methods: {
         ingreso() {
             this.$router.push('/')
         }
-
-
     }
 }
 </script>
+
 <style>
 div#row-form {
 

@@ -1,19 +1,14 @@
 <template>
-    <NavBar></NavBar>
     <div id="contenido">
         <h1>Explora los planes disponibles</h1>
         <h2>Selecciona uno de los planes disponibles</h2>
         <TarjetaPlan v-for="(producto, key) in productos" :key="key" :titulo="producto.titulo"
             :subtitulo="producto.subtitulo" :imagen="producto.imagen" />
-
     </div>
-    <Footer></Footer>
 
 </template>
 <script>
-import NavBar from "@/components/NavBar.vue";
 import TarjetaPlan from "@/components/tarjetaPlan.vue";
-import Footer from "@/components/Footer.vue";
 export default {
     name: 'Planes',
     data() {
@@ -48,10 +43,7 @@ export default {
         }
     },
     components: {
-
-        NavBar,
-        TarjetaPlan,
-        Footer
+        TarjetaPlan
     }
 }
 

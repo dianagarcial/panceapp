@@ -1,5 +1,4 @@
 <template>
-    <NavBar></NavBar>
     <div id="contenido">
         <div id="home-row">
             <div id="text-home">
@@ -13,22 +12,15 @@
         <Botonprincipal nombre="Hoteles" link="hoteles"></Botonprincipal>
         <Botonprincipal nombre="Planes" link="planes"></Botonprincipal>
     </div>
-    <Footer></Footer>
-
 </template>
-<script>
-import NavBar from "@/components/NavBar.vue";
 
+<script>
 import Botonprincipal from "@/components/Boton-principal.vue";
-import Footer from "@/components/Footer.vue";
 export default {
     name: 'Home',
     components: {
-        NavBar,
-        Botonprincipal,
-        Footer
+        Botonprincipal
     }
-
 }
 
 
