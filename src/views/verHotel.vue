@@ -8,7 +8,7 @@
                 <h2>Un lujoso hotel en un hermoso pueblo</h2>
             </div>
         </div>
-        <Servicios></Servicios>
+        <Servicios/>
         <h1>Imagenes</h1>
         <div id="imagenes">
             <img id="imgc" src="https://i.ibb.co/h8Wb7t5/unsplash-j-Ut4-MJXTJn0-5.png" alt="unsplash-j-Ut4-MJXTJn0-5" />
@@ -26,15 +26,9 @@
             direccion="Calle 111 # 77 - 99, Km 4, Cali, Valle del Cauca, Colombia" />
         <Reserva />
     </div>
-
-
 </template>
 
-
 <script>
-
-
-
 import Servicios from "@/components/Servicios.vue";
 import Comentarios from "../components/comentario.vue";
 import Mapa from "@/components/mapa.vue";
@@ -55,16 +49,13 @@ export default {
                     comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas tempor cras justo eu eget tristique tellus volutpat. Fringilla mauris nec hac purus nulla nec. Fermentum.',
                     fecha: 'Aug 31 2022 19:00',
                     imagen: 'https://i.ibb.co/vdK0n6b/Ellipse-1-1.png'
-
                 },
                 {
                     nombre: 'Edmund Pagac',
                     comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas tempor cras justo eu eget tristique tellus volutpat. Fringilla mauris nec hac purus nulla nec. Fermentum.',
                     fecha: 'Aug 31 2022 19:00',
                     imagen: 'https://i.ibb.co/n3wmj7G/Ellipse-1-2.png'
-
                 }
-
             ]
         }
     },

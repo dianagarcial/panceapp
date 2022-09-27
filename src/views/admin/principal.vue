@@ -4,12 +4,12 @@
         <h1>Portal administrativo Travelapp</h1>
         <h1>Administracion servicios</h1>
         <h2>Aqui puedes administrar los servicios en travel</h2>
-        <Botonprincipal nombre="Restaurantes" link="restaurantes" />
+        <Botonprincipal nombre="Restaurantes" link="admin/restaurante" />
         <Botonprincipal nombre="Hoteles" link="admin/hotel" />
-        <Botonprincipal nombre="Planes Vacacionales" link="restaurantes" />
+        <Botonprincipal nombre="Planes Vacacionales" link="admin/planes" />
         <h1>Administracion usuarios</h1>
         <h2>Aqui puedes administrar los usuarios en travel</h2>
-        <Botonprincipal nombre="Administrar usuarios" link="restaurantes" />
+        <Botonprincipal nombre="Administrar usuarios" link="/" />
     </div>
 </template>
 <script>
