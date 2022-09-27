@@ -1,15 +1,15 @@
 <template>
-<NavBar></NavBar>
-<div id="contenido">
-<h1>Mira los platos que ofrecemos</h1>
-<h2>Antojate con los platos disponibles en el menu</h2>
-<Plato/>
-<Plato/>
-<Plato/>
-<Plato/>
+    <NavBar></NavBar>
+    <div id="contenido">
+        <h1>Mira los platos que ofrecemos</h1>
+        <h2>Antojate con los platos disponibles en el menu</h2>
+        <Plato />
+        <Plato />
+        <Plato />
+        <Plato />
 
-</div>
-<Footer></Footer>
+    </div>
+    <Footer></Footer>
 
 </template>
 <script>
@@ -21,16 +21,16 @@ import Footer from "@/components/Footer.vue";
 
 
 export default {
-        name:'Platos',
-        components:{
-    
-    NavBar,
-    Plato,
-    Footer
-}
+    name: 'Platos',
+    components: {
+
+        NavBar,
+        Plato,
+        Footer
+    }
 }
 
 </script>
 <style>
-    
+
 </style>

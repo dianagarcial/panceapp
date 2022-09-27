@@ -5,18 +5,18 @@
     </div>
 </template>
 <script>
-    
-    export default {
-    name:'Totalplan',
-    props:{
+
+export default {
+    name: 'Totalplan',
+    props: {
         total: String
-        
+
 
     }
 }
-    </script>
-    <style>
-        div#total {
+</script>
+<style>
+div#total {
     background: #EEEEEE;
     box-shadow: 4px 4px 10px rgb(0 0 0 / 15%);
     border-radius: 15px;
@@ -27,4 +27,4 @@
     margin-left: 50%;
     justify-content: space-around;
 }
-    </style>
+</style>

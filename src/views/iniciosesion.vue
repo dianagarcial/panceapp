@@ -1,5 +1,4 @@
 <template>
-    <NavBar></NavBar>
     <div id="contenido">
     <h1>Ingreso</h1>
     <h2>Que bueno verte de nuevo</h2>
@@ -13,23 +12,15 @@
             
     </div>
     </div>
-    <Footer></Footer>
 
 
 </template>
 <script>
-import NavBar from "@/components/NavBar.vue";
 
-import Footer from "@/components/Footer.vue";
 
 export default {
     name:'Iniciosesion',
-    components:{
-    NavBar,
-
-    Footer
-    
-},methods:{
+methods:{
             ingreso(){
                 this.$router.push('/') 
             },

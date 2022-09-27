@@ -25,11 +25,12 @@
         overflow: hidden;
         left:0;
         position: relative;
+        box-sizing: border-box;
   left: 0;
   bottom: 0;
         bottom: 0; /* Position the navbar at the top of the page */
         width: 100%; /* Full width */
-        height: 10em;
+        height: auto;
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
     }
 
