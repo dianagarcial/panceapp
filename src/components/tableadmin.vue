@@ -1,51 +1,23 @@
 <template >
-    <div id="table">
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        ID
-                    </th>
-                    <th>
-                        Nombre
-                    </th>
-                    <th>
-                        Acciones
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        1111
-                    </td>
-                    <td>
-                        hotel1
-                    </td>
-                    <td>
-                        accion1
-                        accion2
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        1111
-                    </td>
-                    <td>
-                        hotel1
-                    </td>
-                    <td>
-                        accion1
-                        accion2
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <tr id="table">
+        <td>
+            {{id}}
+        </td>
+        <td>
+            {{nombre}}
+        </td>
+        <td>
+            acciones
+        </td>
+    </tr>
 </template>
 <script>
 export default {
-    name: 'tableadmin'
+    name: 'tableadmin',
+    props: {
+        id: String,
+        nombre: String
+    }
 }
 </script>
 
@@ -61,7 +33,7 @@ div#table {
 table {
     border-collapse: collapse;
     margin: 25px 0;
-    
+
     align-self: center;
     width: 100%;
     min-width: 400px;
@@ -74,7 +46,8 @@ table {
     overflow: hidden;
 }
 
-td, th {
+td,
+th {
     padding: 1rem;
 }
 
@@ -90,11 +63,9 @@ thead tr {
 tbody tr {
     border-bottom: 1px solid #dddddd;
     height: auto
-
 }
 
 tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
-
 </style>

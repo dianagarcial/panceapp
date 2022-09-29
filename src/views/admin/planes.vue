@@ -4,7 +4,20 @@
         <h1>Administracion planes</h1>
         <h2>Aqui puedes administrar los planes en travel</h2>
         <Botonprincipal nombre="Añadir" link="restaurantes" />
-        <tableadmin />
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tableadmin v-for="(plan, key) in planes"
+                :key="key" :id="plan.id" :nombre="plan.nombre"
+                />
+            </tbody>
+        </table>
     </div>
 </template>
 
@@ -18,6 +31,21 @@ export default {
         Botonprincipal,
         tableadmin
     },
+    data() {
+        return {
+            planes: [
+                {
+                    id: "1111",
+                    nombre: "Plan1"
+
+                },
+                {
+                    id: "1112",
+                    nombre: "Plan2"
+                }
+            ]
+        }
+    }
 }
 </script>
 <style>

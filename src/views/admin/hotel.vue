@@ -4,7 +4,20 @@
         <h1>Administracion Hoteles</h1>
         <h2>Aqui puedes administrar los Hoteles en travel</h2>
         <Botonprincipal nombre="Añadir" link="restaurantes" />
-        <tableadmin />
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tableadmin v-for="(hotel, key) in hoteles"
+                :key="key" :id="hotel.id" :nombre="hotel.nombre"
+                />
+            </tbody>
+        </table>
     </div>
 </template>
 
@@ -18,6 +31,22 @@ export default {
         Botonprincipal,
         tableadmin
     },
+    data() {
+        return {
+            hoteles: [
+                {
+                    id: "1111",
+                    nombre: "Hotel1"
+                    
+                },
+                {
+                    id: "1112",
+                    nombre: "Hotel2"
+                }
+            ]
+        }
+
+    }
 }
 </script>
 <style>
