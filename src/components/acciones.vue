@@ -1,6 +1,6 @@
 <template>
-    <div>
-        
+    <div v-if="all">
+        <img/>
     </div>
 </template>
 <script>
