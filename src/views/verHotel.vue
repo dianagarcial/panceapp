@@ -22,9 +22,10 @@
             <Comentarios v-for="(comentario, key) in comentarios" :key="key" :nombre="comentario.nombre"
                 :comentario="comentario.comentario" :fecha="comentario.fecha" :imagen="comentario.imagen" />
         </div>
-        <Mapa imagen="https://i.ibb.co/xMQ8dpV/Frame-5.png" indicacion="Estamos ubicados en la panamericana"
+        <Mapa imagen="../assets/Frame.png" indicacion="Estamos ubicados en la panamericana"
             direccion="Calle 111 # 77 - 99, Km 4, Cali, Valle del Cauca, Colombia" />
         <Reserva />
+        
     </div>
 </template>
 

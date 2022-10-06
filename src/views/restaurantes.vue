@@ -17,10 +17,19 @@
         <PlatoF />
         <Postres />
         <Bebidas />
-
-
-
+        
+        <h1>Reseñas</h1>
+        <h2>Opiniones de otros clientes</h2>
+        <div id="conte-comentario">
+            <Comentarios v-for="(comentario, key) in comentarios" :key="key" :nombre="comentario.nombre"
+                :comentario="comentario.comentario" :fecha="comentario.fecha" :imagen="comentario.imagen" />
+        </div>
+        <Mapa imagen="../assets/Frame.png" indicacion="Estamos ubicados en la panamericana"
+            direccion="Calle 111 # 77 - 99, Km 4, Cali, Valle del Cauca, Colombia" />
+        <Reserva />
+        
     </div>
+
 
 </template>
 <script>
@@ -29,23 +38,51 @@ import Entradas from "@/components/entradas.vue";
 import PlatoF from "@/components/platoFuerte.vue";
 import Postres from "../components/postres.vue";
 import Bebidas from "../components/bebidas.vue";
+import Comentarios from "../components/comentario.vue";
+import Mapa from "@/components/mapa.vue";
+
 export default {
     name: 'Restaurantes',
     props: {
 
         imagenu: String
 
-    }, data() {
+    },data() {
         return {
-            imgSrc: this.imagenu
-        }
-    },
+
+            comentarios: [
+                {
+                    nombre: 'Eloise Beier',
+                    comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas tempor cras justo eu eget tristique tellus volutpat. Fringilla mauris nec hac purus nulla nec. Fermentum.',
+                    fecha: 'Aug 31 2022 19:00',
+                    imagen: 'https://i.ibb.co/5MYt3Pp/Ellipse-1.png'
+                },
+                {
+                    nombre: 'Brad Stokes',
+                    comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas tempor cras justo eu eget tristique tellus volutpat. Fringilla mauris nec hac purus nulla nec. Fermentum.',
+                    fecha: 'Aug 31 2022 19:00',
+                    imagen: 'https://i.ibb.co/vdK0n6b/Ellipse-1-1.png'
+                },
+                {
+                    nombre: 'Edmund Pagac',
+                    comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas tempor cras justo eu eget tristique tellus volutpat. Fringilla mauris nec hac purus nulla nec. Fermentum.',
+                    fecha: 'Aug 31 2022 19:00',
+                    imagen: 'https://i.ibb.co/n3wmj7G/Ellipse-1-2.png'
+                }
+            ]}},
+        
     components: {
+     
+        Comentarios,
+        Mapa,
+        
         Entradas,
         PlatoF,
         Postres,
         Bebidas
     },
+
+
 
     methods: {
         entrada() {
@@ -100,7 +137,7 @@ export default {
 </script>
 <style>
 div#contenidoEntrada {
-    display: block;
+    display: none;
 }
 
 div#contenidoPlatoF {
