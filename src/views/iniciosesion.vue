@@ -3,7 +3,7 @@
         <h1>Ingreso</h1>
         <h2>Que bueno verte de nuevo</h2>
         <h3>Correo electronico</h3>
-        <input type="email" />
+        <input type="email" id="email" name="email" />
         <h3>Contraseña</h3>
         <input type="password" />
         <div id="izq">
