@@ -3,7 +3,7 @@
         <h1>Portal administrativo Travelapp</h1>
         <h1>Administracion Hoteles</h1>
         <h2>Aqui puedes administrar los Hoteles en travel</h2>
-        <Botonprincipal nombre="Añadir" link="restaurantes" />
+        <Botonprincipal nombre="Añadir" link="/admin/hotel/add" />
         <table>
             <thead>
                 <tr>

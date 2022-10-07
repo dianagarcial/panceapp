@@ -70,24 +70,41 @@ const routes = [
   {
     path: '/admin',
     name: 'adminprincipal',
-    component: () => import('../views/admin/principal.vue')
+    children: [
+      {
+        path: '',
+        component: () => import('../views/admin/principal.vue'),
+      },
+      {
+        path: 'hotel',
+        name: 'admin/hotel',
+        component: () => import('../views/admin/hotel.vue'),
+        children: [
+          {
+            path: 'add',
+            name: 'admin/hotel/add',
+            component: () => import('../views/admin/addhotel.vue')
+          }
+          
+        ]
+      },
+      {
+        path: 'restaurante',
+        name: 'admin/restaurante',
+        component: () => import('../views/admin/restaurante.vue')
+      },
+      {
+        path: 'planes',
+        name: 'admin/planes',
+        component: () => import('../views/admin/planes.vue'),
+        
+      },
+      
+      
+    ]
   }
   ,
-  {
-    path: '/admin/hotel',
-    name: 'admin/hotel',
-    component: () => import('../views/admin/hotel.vue')
-  },
-  {
-    path: '/admin/restaurante',
-    name: 'admin/restaurante',
-    component: () => import('../views/admin/restaurante.vue')
-  },
-  {
-    path: '/admin/planes',
-    name: 'admin/planes',
-    component: () => import('../views/admin/planes.vue')
-  }
+  
 
 
 
