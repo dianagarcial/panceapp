@@ -26,11 +26,11 @@
             <div id="row-form">
                 <div id="colum-form">
                     <h3>Contraseña</h3>
-                    <input />
+                    <input type="password" id="password" name="password" v-model="password"  />
                 </div>
                 <div id="colum-form">
                     <h3>Confirma tu contraseña</h3>
-                    <input type="password" id="password" name="password" v-model="password" />
+                    <input />
                 </div>
             </div>
             <div id="izq">
