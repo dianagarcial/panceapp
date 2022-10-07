@@ -18,14 +18,14 @@ const routes = [
     component: () => import('../views/hoteles.vue')
   },
   {
-    path: '/restaurantes',
-    name: 'Restaurantes',
+    path: '/restaurante',
+    name: 'Restaurante',
     component: () => import('../views/restaurantes.vue')
   },
   {
-    path: '/planes',
-    name: 'Planes',
-    component: () => import('../views/planes.vue')
+    path: '/restaurantes',
+    name: 'Restaurantes',
+    component: () => import('../views/TRestaurantes.vue')
   },
   {
     path: '/platos',

@@ -4,13 +4,12 @@
         <img id="foto-plan" :src="imgSrc" alt="Frame-2" />
         <div id="conte-tarjeta-plan">
             <h3 id="tarj3">{{titulo}}</h3>
-            <h4 id="tarj4">${{subtitulo}}</h4>
             <Estrellas></Estrellas>
         </div>
 
 
         <div id="btn-ent">
-            <button id="btn-ent">Reservar</button>
+            <button id="btn-ent" @click="entrar">Ver</button>
 
         </div>
 
@@ -37,6 +36,10 @@ export default {
     },
     components: {
         Estrellas
+    }, methods: {
+        entrar() {
+            this.$router.push('/restaurante')
+        }
     }
 
 }
@@ -61,6 +64,7 @@ div#conte-tarjeta-plan {
     flex-direction: column;
     margin: 2%;
     width: 65%;
+    justify-content: center;
 }
 
 img#foto-plan {

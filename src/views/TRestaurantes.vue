@@ -1,29 +1,28 @@
 <template>
     <div id="contenido">
-        <h1>Explora los planes disponibles</h1>
-        <h2>Selecciona uno de los planes disponibles</h2>
-        <TarjetaPlan v-for="(producto, key) in productos" :key="key" :titulo="producto.titulo"
-            :subtitulo="producto.subtitulo" :imagen="producto.imagen" />
+        <h1>Explora los restaurantes disponibles</h1>
+        <h2>Selecciona uno de los restaurantes disponibles, para iniciar tu orden</h2>
+        <TarjetaPlan v-for="(producto, key) in productos" 
+            :key="key" 
+            :titulo="producto.titulo"
+            :imagen="producto.imagen" />
     </div>
 
 </template>
 <script>
 import TarjetaPlan from "@/components/tarjetaPlan.vue";
 export default {
-    name: 'Planes',
+    name: 'TRestaurantes',
     data() {
         return {
             productos: [
                 {
-                    titulo: 'Plan 1',
-                    subtitulo: '60.000',
-
+                    titulo: 'Restaurante 1',
                     imagen: 'https://i.ibb.co/VqZN88S/unsplash-j-Ut4-MJXTJn0-4.png'
 
                 },
                 {
-                    titulo: 'Plan 2',
-                    subtitulo: '70.000',
+                    titulo: 'Restaurante 2',
                     imagen: 'https://i.ibb.co/QCqWngB/Frame-2-18.png'
 
 
@@ -32,9 +31,7 @@ export default {
 
                 },
                 {
-                    titulo: 'Plan 3',
-                    subtitulo: '80.000',
-
+                    titulo: 'Restaurante 3',
                     imagen: 'https://i.ibb.co/ZGJKtws/Frame-2-19.png'
 
 

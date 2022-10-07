@@ -43,7 +43,13 @@ export default {
                     email: this.email,
                     password: this.password
                 })
-                this.router.push('/admin')
+
+                if(this.email==='administrador@gmail.com'){
+                    this.router.push('/admin')
+                }else{
+                    this.router.push('/')
+                }
+                
             }
             catch (err) {
                 this.error = err.message

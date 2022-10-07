@@ -9,9 +9,9 @@
             </div>
 
             <div id="nav-bar-link">
-                <router-link to="/planes">Planes</router-link>
-                <router-link to="/restaurantes">Restaurantes</router-link>
-                <router-link to="/hoteles">Hotel</router-link>
+                
+                <router-link to="/restaurantes">Ver restaurantes</router-link>
+               
 
                 <div id="imgs">
                     <router-link to="/carrito"><img id="carrito"
@@ -81,9 +81,10 @@ div#nav-bar-logo {
 div#nav-bar-link {
     width: 50%;
     margin-right: 5%;
+    margin-left: 5%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:end;
     align-items: center;
     text-decoration: none;
 }
