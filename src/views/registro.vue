@@ -2,50 +2,78 @@
     <div id="contenido">
         <h1>Registrate</h1>
         <h2>Registrate para obtener beneficios</h2>
-        <div id="row-form">
-            <div id="colum-form">
-                <h3>Nombre Completo</h3>
-                <input />
+        <form @submit.prevent="Register()">
+            <div id="row-form">
+                <div id="colum-form">
+                    <h3>Nombre Completo</h3>
+                    <input />
+                </div>
+                <div id="colum-form">
+                    <h3>Direccion</h3>
+                    <input />
+                </div>
             </div>
-            <div id="colum-form">
-                <h3>Direccion</h3>
-                <input />
+            <div id="row-form">
+                <div id="colum-form">
+                    <h3>Correo electronico</h3>
+                    <input type="email" id="email" name="email" v-model="email" />
+                </div>
+                <div id="colum-form">
+                    <h3>Numero de contacto</h3>
+                    <input />
+                </div>
             </div>
-        </div>
-        <div id="row-form">
-            <div id="colum-form">
-                <h3>Correo electronico</h3>
-                <input />
+            <div id="row-form">
+                <div id="colum-form">
+                    <h3>Contraseña</h3>
+                    <input />
+                </div>
+                <div id="colum-form">
+                    <h3>Confirma tu contraseña</h3>
+                    <input type="password" id="password" name="password" v-model="password" />
+                </div>
             </div>
-            <div id="colum-form">
-                <h3>Numero de contacto</h3>
-                <input />
+            <div id="izq">
+                <button id="ir" type="submit">Registrarse</button>
+                <button id="retro" @click="ingreso">Ingresar</button>
             </div>
-        </div>
-        <div id="row-form">
-            <div id="colum-form">
-                <h3>Contraseña</h3>
-                <input />
-            </div>
-            <div id="colum-form">
-                <h3>Confirma tu contraseña</h3>
-                <input />
-            </div>
-        </div>
-        <div id="izq">
-            <button id="ir" @click="ingreso">Registrarse</button>
-            <button id="retro" @click="ingreso">Ingresar</button>
-        </div>
+        </form>
     </div>
 </template>
 
 <script>
+
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
 export default {
     name: 'Registro',
-    methods: {
-        ingreso() {
-            this.$router.push('/')
+    data() {
+        return {
+            email: '',
+            password: '',
+            error: null,
+            store: useStore(),
+            router: useRouter(),
         }
+    },
+    methods: {
+        async Register() {
+            try {
+                await this.store.dispatch('user/Register', {
+                    email: this.email,
+                    password: this.password
+                })
+                this.router.push('/ingreso')
+            }
+            catch (err) {
+                this.error = err.message
+                console.log(this.error)
+            }
+        },
+        registro() {
+            this.router.push('/registro')
+        }
+
     }
 }
 </script>

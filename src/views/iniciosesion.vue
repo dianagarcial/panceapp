@@ -4,12 +4,12 @@
         <h2>Que bueno verte de nuevo</h2>
         <form @submit.prevent="Login()">
             <h3>Correo electronico</h3>
-            <input type="email" id="email" name="email" />
+            <input type="email" id="email" name="email" v-model="email"/>
             <h3>Contraseña</h3>
-            <input type="password" id="pass" name="pass" />
+            <input type="password" id="password" name="password" v-model="password"/>
             <div id="izq">
                 <button id="retro" type="submit">Ingresar</button>
-                <button id="ir" @click="registro">Registrarse</button>
+                <button id="ir" @click="registro()" >Registrarse</button>
 
             </div>
 
@@ -43,10 +43,11 @@ export default {
                     email: this.email,
                     password: this.password
                 })
-                this.router.push('/registro')
+                this.router.push('/admin')
             }
             catch (err) {
-                this.error=err.message
+                this.error = err.message
+                console.log(this.error)
             }
         },
         registro() {

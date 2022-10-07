@@ -9,7 +9,7 @@ const userStorage = {
     state: state,
     actions: actions,
     mutations: mutations,
-    getters:getters
+    getters: getters
 }
 
 export default userStorage;
