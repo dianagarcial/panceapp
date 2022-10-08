@@ -75,6 +75,22 @@ input {
   align-items: center;
   outline: none;
 }
+textarea{
+  background: #EEEEEE;
+  /* Sombra1 */
+
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  width: 95%;
+  border: 0;
+  padding: 2%;
+  font-family: 'Varela';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  align-items: center;
+  outline: none;
+}
 
 button#retro {
   /* AzulA */
@@ -88,7 +104,7 @@ button#retro {
   font-style: normal;
   font-weight: 400;
   font-size: 1em;
-
+  cursor: pointer;
 
 }
 
@@ -105,7 +121,7 @@ button#ir {
   font-style: normal;
   font-weight: 400;
   font-size: 1em;
-
+  cursor: pointer;
 }
 
 div#izq {

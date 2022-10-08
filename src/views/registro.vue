@@ -26,7 +26,7 @@
             <div id="row-form">
                 <div id="colum-form">
                     <h3>Contraseña</h3>
-                    <input type="password" id="password" name="password" v-model="password"  />
+                    <input type="password" id="password" name="password" v-model="password" />
                 </div>
                 <div id="colum-form">
                     <h3>Confirma tu contraseña</h3>
@@ -34,8 +34,9 @@
                 </div>
             </div>
             <div id="izq">
+
+                <button id="retro" @click="registro">Cancelar</button>
                 <button id="ir" type="submit">Registrarse</button>
-                <button id="retro" @click="ingreso">Ingresar</button>
             </div>
         </form>
     </div>
@@ -64,14 +65,43 @@ export default {
                     password: this.password
                 })
                 this.router.push('/ingreso')
+                this.$swal({
+                    toast: true,
+                    position: 'top-right',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 1500,
+                    background: '#a5dc86',
+                    icon: 'success',
+                    title: 'Usuario registrado'
+
+                });
+
             }
             catch (err) {
                 this.error = err.message
                 console.log(this.error)
+                this.$swal({
+                    toast: true,
+                    position: 'top-right',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 1500,
+                    background: '#f27474',
+                    icon: 'error',
+                    title: 'Registro no realizado'
+
+                });
             }
         },
         registro() {
-            this.router.push('/registro')
+            this.router.push('/ingreso')
         }
 
     }

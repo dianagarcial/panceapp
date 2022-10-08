@@ -78,33 +78,59 @@ const routes = [
       {
         path: 'hotel',
         name: 'admin/hotel',
-        component: () => import('../views/admin/hotel.vue'),
         children: [
+          {
+            path: '',
+            component: () => import('../views/admin/hotel.vue'),
+          },
           {
             path: 'add',
             name: 'admin/hotel/add',
-            component: () => import('../views/admin/addhotel.vue')
+            component: () => import('../views/admin/addhotel.vue'),
           }
-          
+
+
         ]
       },
       {
         path: 'restaurante',
         name: 'admin/restaurante',
-        component: () => import('../views/admin/restaurante.vue')
+        children: [
+          {
+            path: '',
+            component: () => import('../views/admin/restaurante.vue')
+          },
+          {
+            path: 'edit',
+            name: 'admin/restaurante/edit',
+            component: () => import('../views/admin/editRestaurante.vue'),
+          },
+          {
+            path: 'add',
+            name: 'admin/restaurante/add',
+            component: () => import('../views/admin/addRestaurante.vue'),
+          },
+          {
+            path: 'addPlato',
+            name: 'admin/restaurante/addPlato',
+            component: () => import('../views/admin/addPlato.vue'),
+          }
+
+
+        ]
       },
       {
         path: 'planes',
         name: 'admin/planes',
         component: () => import('../views/admin/planes.vue'),
-        
+
       },
-      
-      
+
+
     ]
   }
   ,
-  
+
 
 
 
@@ -112,7 +138,11 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior() {
+    // always scroll to top
+    return { top: 0 }
+  },
 })
 
 export default router

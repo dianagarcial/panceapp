@@ -1,0 +1,3 @@
+        <h1>Administracion usuarios</h1>
+        <h2>Aqui puedes administrar los usuarios en travel</h2>
+        <Botonprincipal nombre="Administrar usuarios" link="/" />

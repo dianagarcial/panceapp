@@ -3,7 +3,7 @@
         <h1>Portal administrativo Travelapp</h1>
         <h1>Administracion Restaurantes</h1>
         <h2>Aqui puedes administrar los restaurantes en travel</h2>
-        <Botonprincipal nombre="Añadir" link="restaurantes" />
+        <Botonprincipal nombre="Añadir" link="restaurante/add" />
         <table>
             <thead>
                 <tr>
@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tableadmin v-for="(plan, key) in planes" :key="key" :id="plan.id" :nombre="plan.nombre" />
+                <tableadmin v-for="(restaurante, key) in restaurantes" :key="key" :id="restaurante.id" :nombre="restaurante.nombre" :acciones="restaurante.accion" :link="restaurante.link" />
             </tbody>
         </table>
     </div>
@@ -31,15 +31,18 @@ export default {
     },
     data() {
         return {
-            planes: [
+            restaurantes: [
                 {
                     id: "1111",
-                    nombre: "Restaurante1"
-
+                    nombre: "Restaurante1",
+                    accion: 'R',
+                    link: "/admin/restaurante/edit"
                 },
                 {
                     id: "1112",
-                    nombre: "Restaurante2"
+                    nombre: "Restaurante2",
+                    accion: 'R',
+                    link: "/admin/restaurante/edit"
                 }
             ]
         }

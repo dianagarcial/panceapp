@@ -10,7 +10,8 @@
 
             <div id="nav-bar-link">
                 
-                <router-link to="/restaurantes">Ver restaurantes</router-link>
+                <router-link to="/restaurantes">Restaurantes</router-link>
+                <router-link to="/hoteles">Hoteles</router-link>
                
 
                 <div id="imgs">
@@ -87,6 +88,7 @@ div#nav-bar-link {
     justify-content:end;
     align-items: center;
     text-decoration: none;
+    gap: 20px
 }
 
 a {

@@ -7,16 +7,41 @@
             {{nombre}}
         </td>
         <td>
-            acciones
+            <div v-if="acciones === 'R'">
+                <router-link :to="lin">
+                    <img src="https://i.ibb.co/wgVS11g/akar-icons-eye-open.png" alt="Ver" height="30" width="30" />
+                </router-link>
+
+            </div>
+            <div v-else-if="acciones === 'E'">
+                <router-link :to="lin">
+                    <img src="https://i.ibb.co/X3Tc1C8/ci-edit.png" alt="Editar" height="30" width="30" />
+                </router-link>
+            </div>
+            <div v-else-if="acciones === 'D'">
+                <router-link :to="lin">
+                    <img src="https://i.ibb.co/0FRPzMQ/ant-design-delete-outlined.png" alt="Eliminar" height="30"
+                        width="30">
+                </router-link>
+            </div>
         </td>
     </tr>
 </template>
 <script>
+
+
 export default {
-    name: 'tableadmin',
+    name: "tableadmin",
     props: {
         id: String,
-        nombre: String
+        nombre: String,
+        acciones: String,
+        link: String
+    },
+    data() {
+        return {
+            lin: this.link
+        }
     }
 }
 </script>

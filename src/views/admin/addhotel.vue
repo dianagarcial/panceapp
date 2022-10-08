@@ -8,11 +8,10 @@
                 <h3>Nombre del hotel</h3>
                 <input />
             
-            <div id="colum-form">
-                <h3>Telefono</h3>
-                <input />
-            </div>
-        
+
+                <h3>Descripcion</h3>
+                <textarea />
+
         <div id="row-form">
             <div id="colum-form">
                 <h3>Dirección</h3>
@@ -34,8 +33,9 @@
             </div>
         </div>
         <div id="izq">
-            <button id="ir" @click="ingreso">Registrarse</button>
-            <button id="retro" @click="ingreso">Ingresar</button>
+            
+            <button id="retro" @click="ingreso">Cancelar</button>
+            <button id="ir" @click="ingreso">Agregar</button>
         </div>
     </div>
 </template>

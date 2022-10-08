@@ -10,7 +10,6 @@
         </div>
         <Botonprincipal nombre="Restaurante" link="restaurantes"></Botonprincipal>
         <Botonprincipal nombre="Hoteles" link="hoteles"></Botonprincipal>
-        <Botonprincipal nombre="Planes" link="planes"></Botonprincipal>
     </div>
 </template>
 
