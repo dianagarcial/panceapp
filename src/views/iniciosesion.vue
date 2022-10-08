@@ -21,6 +21,7 @@
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 
+
 export default {
 
 
@@ -47,7 +48,21 @@ export default {
                 } else {
                     this.router.push('/')
                 }
+                this.$swal({
+                    toast: true,
+                    position: 'top-right',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 1500,
+                    background: '#7DE36D',
+                    icon: 'success',
+                    title: 'Ingreso exitoso'
 
+                });
+                
             }
             catch (err) {
                 this.error = err.message

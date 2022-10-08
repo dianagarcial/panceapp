@@ -1,5 +1,7 @@
+
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/home.vue'
+//import firebase from '../Firebase/config'
 
 const routes = [
   {
@@ -70,6 +72,9 @@ const routes = [
   {
     path: '/admin',
     name: 'adminprincipal',
+    meta: {
+      autenticado: true
+    },
     children: [
       {
         path: '',
@@ -119,12 +124,6 @@ const routes = [
 
         ]
       },
-      {
-        path: 'planes',
-        name: 'admin/planes',
-        component: () => import('../views/admin/planes.vue'),
-
-      },
 
 
     ]
@@ -135,6 +134,18 @@ const routes = [
 
 
 ]
+
+// router.beforeEach((to, from, next) => {
+//   let usuario= firebase.auth().currentUser;
+//   let autorizacion = to.matched.some(record => record.meta.autenticado)
+//   if (autorizacion && !usuario) {
+//     next('Iniciosesion')
+//   } else if (!autorizacion && usuario){
+//     next('Home');
+//   }else{
+//     next()
+//   }
+// });
 
 const router = createRouter({
   history: createWebHashHistory(),
