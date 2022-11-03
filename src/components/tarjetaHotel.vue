@@ -11,7 +11,7 @@
         </div>
 
         <div id="btn-ent">
-            <button id="btn-ent" @click="entrar">Reservar</button>
+            <button id="btn-ent" @click="entrar(idhotel)">Reservar</button>
 
         </div>
 
@@ -39,8 +39,9 @@ export default {
     components: {
         sumaResta
     }, methods: {
-        entrar() {
-            this.$router.push('/verHotel')
+        async entrar(idhotel) {
+            console.log(idhotel)
+            await this.$router.push(`/verHotel/${idhotel}`)
         }
     }
 

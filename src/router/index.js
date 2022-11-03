@@ -20,9 +20,12 @@ const routes = [
     component: () => import('../views/hoteles.vue')
   },
   {
-    path: '/restaurante',
+    path: '/restaurante/:idrestaurante',
     name: 'Restaurante',
+    props: true,
     component: () => import('../views/restaurantes.vue')
+
+    
   },
   {
     path: '/restaurantes',
@@ -55,7 +58,7 @@ const routes = [
     component: () => import('../views/PlatoFuerte.vue')
   },
   {
-    path: '/verHotel',
+    path: '/verHotel/:idhotel',
     name: 'VerHoteles',
     component: () => import('../views/verHotel.vue')
   },

@@ -3,8 +3,8 @@
     <div id="contenidoPlatoF" display="none">
         <h1>Platos fuertes</h1>
         <h2>Selecciona uno de los platos a continuacion</h2>
-        <Pgeneral v-for="(producto, key) in productos" :key="key" :titulo="producto.titulo"
-            :subtitulo="producto.subtitulo" :imagen="producto.imagen" />
+        <Pgeneral v-for="(producto, key) in productos" :key="key" :titulo="producto.nombre"
+            :subtitulo="producto.precio" :imagen="producto.imagen" />
     </div>
 
 </template>
@@ -17,33 +17,33 @@ export default {
     name: 'Entradas',
     data() {
         return {
-            productos: [
-                {
-                    titulo: 'Platos Fuertes 1',
-                    subtitulo: '60.000',
-
-                    imagen: 'https://i.ibb.co/Q68FwnM/Frame-2-5.png'
-
-                },
-                {
-                    titulo: 'Platos Fuertes 2',
-                    subtitulo: '70.000',
-                    imagen: 'https://i.ibb.co/j8VMTgt/Frame-2-6.png'
-
-                },
-                {
-                    titulo: 'Platos Fuertes 3',
-                    subtitulo: '80.000',
-                    imagen: 'https://i.ibb.co/Jvf0nmr/Frame-2-7.png'
-
-                }
-            ]
+            productos: []  
+            
         }
     },
     components: {
 
         Pgeneral
+    },
+    created() {
+        this.listarPFuerte();
+    },
+    methods: {
+        listarPFuerte() {
+            this.resta = this.$route.params.idrestaurante;
+            this.axios.get(`/restaurante/${this.resta}/2`)
+                .then((response) => {
+                    console.log(response.data.platoTipo)
+                    this.productos = response.data.platoTipo;
+                })
+                .catch((e) => {
+                    console.log('error' + e);
+                })
+        }
+
     }
+
+
 
 }
 

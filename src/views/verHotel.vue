@@ -1,19 +1,19 @@
 <template>
     <div id="contenido">
         <div id="conte-vhotel">
-            <img id="foto-plan" src="https://i.ibb.co/vj3ntfd/Frame-2-1.png" alt="Frame-2" />
+            <img id="foto-plan" :src="hotel.imagen" alt="Frame-2" />
 
             <div id="conte-vhotel-text">
-                <h1>Hotel Pance 1</h1>
-                <h2>Un lujoso hotel en un hermoso pueblo</h2>
+                <h1>{{ hotel.nombre }}</h1>
+                <h2>{{ hotel.descripcion }}</h2>
             </div>
         </div>
-        <Servicios/>
+        <Servicios />
         <h1>Imagenes</h1>
         <div id="imagenes">
-            <img id="imgc" src="https://i.ibb.co/h8Wb7t5/unsplash-j-Ut4-MJXTJn0-5.png" alt="unsplash-j-Ut4-MJXTJn0-5" />
-            <img id="imgc" src="https://i.ibb.co/HdMZ7R1/unsplash-j-Ut4-MJXTJn0-6.png" alt="unsplash-j-Ut4-MJXTJn0-6" />
-            <img id="imgc" src="https://i.ibb.co/7rDwTZw/unsplash-j-Ut4-MJXTJn0-7.png" alt="unsplash-j-Ut4-MJXTJn0-7" />
+            <img id="imgc" :src="hotel.imagenaux1" alt="unsplash-j-Ut4-MJXTJn0-5" />
+            <img id="imgc" :src="hotel.imagenaux2" alt="unsplash-j-Ut4-MJXTJn0-6" />
+            <img id="imgc" :src="hotel.imagenaux3" alt="unsplash-j-Ut4-MJXTJn0-7" />
         </div>
 
         <h1>Reseñas</h1>
@@ -22,11 +22,11 @@
             <Comentarios v-for="(comentario, key) in comentarios" :key="key" :nombre="comentario.nombre"
                 :comentario="comentario.comentario" :fecha="comentario.fecha" :imagen="comentario.imagen" />
         </div>
-        <Mapa imagen="https://i.ibb.co/ZzK7vff/Frame-5-1.png" indicacion="Estamos ubicados en la panamericana"
-            direccion="Calle 111 # 77 - 99, Km 4, Cali, Valle del Cauca, Colombia" />
-        
+        <Mapa imagen="https://i.ibb.co/ZzK7vff/Frame-5-1.png" :indicacion="hotel.indicacion"
+            :direccion="hotel.direccion" />
+
         <Reserva />
-        
+
     </div>
 </template>
 
@@ -39,6 +39,7 @@ export default {
     name: 'VerHoteles',
     data() {
         return {
+            hotel: {},
             comentarios: [
                 {
                     nombre: 'Eloise Beier',
@@ -66,6 +67,23 @@ export default {
         Comentarios,
         Mapa,
         Reserva
+    },
+    created() {
+        this.listarHotel();
+    },
+    methods: {
+        listarHotel() {
+            this.hot = this.$route.params.idhotel;
+            this.axios.get(`/hotel/${this.hot}`)
+                .then((response) => {
+                    console.log(response.data.Hotel_)
+                    this.hotel = response.data.Hotel_;
+                })
+                .catch((e) => {
+                    console.log('error' + e);
+                })
+        }
+
     }
 
 }

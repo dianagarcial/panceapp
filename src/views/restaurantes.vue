@@ -17,18 +17,18 @@
         <PlatoF />
         <Postres />
         <Bebidas />
-        
+
         <h1>Reseñas</h1>
         <h2>Opiniones de otros clientes</h2>
         <div id="conte-comentario">
             <Comentarios v-for="(comentario, key) in comentarios" :key="key" :nombre="comentario.nombre"
                 :comentario="comentario.comentario" :fecha="comentario.fecha" :imagen="comentario.imagen" />
         </div>
-        
-        <Mapa imagen="https://i.ibb.co/ZzK7vff/Frame-5-1.png" indicacion="Estamos ubicados en la panamericana"
-            direccion="Calle 111 # 77 - 99, Km 4, Cali, Valle del Cauca, Colombia" />
+
+        <Mapa imagen="https://i.ibb.co/ZzK7vff/Frame-5-1.png" :indicacion="mapa.indicacion"
+            :direccion="mapa.direccion" />
         <Reserva />
-        
+
     </div>
 
 
@@ -48,8 +48,10 @@ export default {
 
         imagenu: String
 
-    },data() {
+    }, data() {
         return {
+            resta: '',
+            mapa: {},
 
             comentarios: [
                 {
@@ -70,23 +72,28 @@ export default {
                     fecha: 'Aug 31 2022 19:00',
                     imagen: 'https://i.ibb.co/n3wmj7G/Ellipse-1-2.png'
                 }
-            ]}},
-        
+            ]
+        }
+    },
+
     components: {
         Comentarios,
         Mapa,
-        
+
         Entradas,
         PlatoF,
         Postres,
         Bebidas
     },
+    created(){
+    this.listarMapa();
+  },
 
 
 
     methods: {
         entrada() {
-
+            
             document.getElementById("contenidoEntrada").style.display = "block"
             document.getElementById("contenidoPlatoF").style.display = "none"
             document.getElementById("contenidoPostre").style.display = "none"
@@ -130,9 +137,25 @@ export default {
             document.getElementById("imgrestauP").src = "https://i.ibb.co/StvBhSH/Entrada-1.png";
             document.getElementById("imgrestauO").src = "https://i.ibb.co/fN7R33C/Entrada-2.png";
             document.getElementById("imgrestauB").src = "https://i.ibb.co/4pLsjvr/Entrada-8.png";
+        },
+
+        listarMapa() {
+            this.resta = this.$route.params.idrestaurante;
+            this.axios.get(`/restaurante/${this.resta}`)
+                .then((response) => {
+                    console.log(response.data.Restaurante_)
+                    this.mapa = response.data.Restaurante_;
+                })
+                .catch((e) => {
+                    console.log('error' + e);
+                })
         }
+        
+
 
     }
+
+
 }
 </script>
 <style>

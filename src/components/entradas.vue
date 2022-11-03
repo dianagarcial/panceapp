@@ -3,8 +3,8 @@
     <div id="contenidoEntrada" display="none">
         <h1>Entradas</h1>
         <h2>Selecciona uno de los platos a continuacion</h2>
-        <Pgeneral v-for="(producto, key) in productos" :key="key" :titulo="producto.titulo"
-            :subtitulo="producto.subtitulo" :imagen="producto.imagen" />
+        <Pgeneral v-for="(producto, key) in productos" :key="key" :titulo="producto.nombre"
+            :subtitulo="producto.precio" :imagen="producto.imagen" />
     </div>
 
 </template>
@@ -17,30 +17,30 @@ export default {
     name: 'Entradas',
     data() {
         return {
-            productos: [
-                {
-                    titulo: 'Entrada1',
-                    subtitulo: '60.000',
-
-                    imagen: 'https://i.ibb.co/NxmgbhK/Frame-2-3.png'
-                },
-                {
-                    titulo: 'Entrada2',
-                    subtitulo: '70.000',
-                    imagen: 'https://i.ibb.co/qBYyw37/Frame-2-2.png'
-                },
-                {
-                    titulo: 'Entrada3',
-                    subtitulo: '80.000',
-
-                    imagen: 'https://i.ibb.co/0t1bQdT/Frame-2-4.png'
-                }
-            ]
+            productos: []
+            
         }
     },
     components: {
 
         Pgeneral
+    },
+    created() {
+        this.listarEntrada();
+    },
+    methods: {
+        listarEntrada() {
+            this.resta = this.$route.params.idrestaurante;
+            this.axios.get(`/restaurante/${this.resta}/1`)
+                .then((response) => {
+                    console.log(response.data.platoTipo)
+                    this.productos = response.data.platoTipo;
+                })
+                .catch((e) => {
+                    console.log('error' + e);
+                })
+        }
+
     }
 
 }

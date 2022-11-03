@@ -9,7 +9,7 @@
 
 
         <div id="btn-ent">
-            <button id="btn-ent" @click="entrar">Ver</button>
+            <button id="btn-ent" @click="entrar(idres)">Ver</button>
 
         </div>
 
@@ -26,19 +26,22 @@ export default {
     props: {
         titulo: String,
         subtitulo: String,
-        imagen: String
+        imagen: String,
+        idres:String
 
     },
     data() {
         return {
-            imgSrc: this.imagen
+            imgSrc: this.imagen,
+            
         }
     },
     components: {
         Estrellas
     }, methods: {
-        entrar() {
-            this.$router.push('/restaurante')
+        async entrar(idres) {
+            
+            await this.$router.push(`restaurante/${idres}`)
         }
     }
 
