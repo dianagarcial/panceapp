@@ -44,7 +44,7 @@ export default {
     },
 
     methods: {
-        guardar() {
+        async guardar() {
             if(this.form.fechaIngreso===''|| this.form.fechaSalida ==''|| this.form.cantPersonas === '' || this.form.nroHabitaciones ===''){
                 this.$swal({
                         title: "Complete todos los campos",
@@ -57,7 +57,7 @@ export default {
             
             this.form.idHotel = this.$route.params.idhotel
             console.log(this.form)
-            axios.post("/reserva/new", this.form)
+            await axios.post("/reserva/new", this.form)
                 .then((result) => {
                     console.log(result);
                     this.$swal({

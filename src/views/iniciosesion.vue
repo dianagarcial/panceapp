@@ -20,7 +20,7 @@
 
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
-
+import axios from 'axios'
 
 export default {
 
@@ -38,12 +38,36 @@ export default {
     methods: {
         async Login() {
             try {
+                if(this.email==='' || this.password===''){
+                    this.$swal({
+                    toast: true,
+                    position: 'top-right',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 1500,
+                    background: '#ffc938f0',
+                    icon: 'error',
+                    title: 'Ingrese todos los campos'
+                });
+            }else{
                 await this.store.dispatch('user/logIn', {
                     email: this.email,
                     password: this.password
                 })
-
-                if (this.email === 'administrador@gmail.com') {
+                await axios.post("/usuario/login", {
+                    
+                    correo:this.email,
+                    contrasena:this.password,
+                                
+                }).then((result) => {
+                localStorage.setItem('token', result.data.token);
+                localStorage.setItem('token-init-date', new Date().getTime() );
+                    
+              
+                if (result.data.usuario.rol=== '0') {
                     this.router.push('/admin')
                 } else {
                     this.router.push('/')
@@ -62,7 +86,8 @@ export default {
                     title: 'Ingreso exitoso'
 
                 });
-                
+            });
+            }
             }
             catch (err) {
                 this.error = err.message

@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tableadmin v-for="(restaurante, key) in restaurantes" :key="key" :id="restaurante.id" :nombre="restaurante.nombre" :acciones="restaurante.accion" :link="restaurante.link" />
+                <tableadmin v-for="(restaurante, key) in restaurantes" :key="key" :id="restaurante.id" :nombre="restaurante.nombre"  />
             </tbody>
         </table>
     </div>
@@ -31,22 +31,25 @@ export default {
     },
     data() {
         return {
-            restaurantes: [
-                {
-                    id: "1111",
-                    nombre: "Restaurante1",
-                    accion: 'R',
-                    link: "/admin/restaurante/edit"
-                },
-                {
-                    id: "1112",
-                    nombre: "Restaurante2",
-                    accion: 'R',
-                    link: "/admin/restaurante/edit"
-                }
-            ]
+            restaurantes: []
         }
+    }, 
+  created() {
+    this.listarRestaurante();
+  },
+  methods: {
+    listarRestaurante() {
+      this.axios.get('/restaurante/todos')
+        .then((response) => {
+          console.log(response.data.Restaurante_)
+          this.restaurantes = response.data.Restaurante_;
+        })
+        .catch((e) => {
+          console.log('error' + e);
+        })
     }
+
+  }
 }
 </script>
 <style>

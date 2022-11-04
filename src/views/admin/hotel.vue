@@ -14,7 +14,7 @@
             </thead>
             <tbody>
                 <tableadmin v-for="(hotel, key) in hoteles"
-                :key="key" :id="hotel.id" :nombre="hotel.nombre" :acciones="hotel.accion" :link="hotel.link"
+                :key="key" :id="hotel.id" :nombre="hotel.nombre" 
                 />
             </tbody>
         </table>
@@ -33,23 +33,27 @@ export default {
     },
     data() {
         return {
-            hoteles: [
-                {
-                    id: "1111",
-                    nombre: "Hotel1",
-                    accion: 'R',
-                    link: "/admin"
-                },
-                {
-                    id: "1112",
-                    nombre: "Hotel2",
-                    accion: 'E',
-                    link: "/admin"
-                }
-            ]
+            hoteles: [ ]
         }
 
+    },
+    created() {
+    this.listarHoteles();
+  },
+  methods: {
+    listarHoteles() {
+      this.axios.get('/hotel/todos')
+        .then((response) => {
+          console.log(response.data.Hotel_)
+          this.hoteles = response.data.Hotel_;
+          
+        })
+        .catch((e) => {
+          console.log('error' + e);
+        })
     }
+
+  }
 }
 </script>
 <style>
