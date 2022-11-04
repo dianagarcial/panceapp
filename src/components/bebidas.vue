@@ -28,6 +28,7 @@ export default {
         this.listarBebida();
     },
     methods: {
+        
         listarBebida() {
             this.resta = this.$route.params.idrestaurante;
             this.axios.get(`/restaurante/${this.resta}/4`)

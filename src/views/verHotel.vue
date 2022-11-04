@@ -99,6 +99,8 @@ div#conte-vhotel {
 div#conte-vhotel-text {
     display: flex;
     flex-direction: column;
+    margin-left: 2em;
+    margin-bottom: 2em;
 }
 
 h1 {
@@ -114,5 +116,9 @@ div#imagenes {
 
 img#imgc {
     width: 30%;
+}
+
+div#conte-vhotel-text h2 {
+    line-height: 1.5em;
 }
 </style>

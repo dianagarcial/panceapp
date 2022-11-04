@@ -29,7 +29,8 @@ export default {
     props: {
         titulo: String,
         subtitulo: String,
-        imagen: String
+        imagen: String,
+        idhotel:String
 
     }, data() {
         return {

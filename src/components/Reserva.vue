@@ -1,21 +1,62 @@
 <template>
-    <div id="reserva">
-        <h1>Reserva ahora</h1>
-        <h2>Fecha de ingreso</h2>
-        <input type="date" />
-        <h2>Fecha de salida</h2>
-        <input type="date" />
-        <h2>Cantidad de personas</h2>
-        <input type="number" />
-        <h2>Habitaciones</h2>
-        <input type="number" />
-        <div id="izq">
-            <button id="ir">Calcular</button>
-            <button id="retro">Reservar</button>
+
+        <div id="reserva">
+            <h1>Reserva ahora</h1>
+            <h2>Fecha de ingreso</h2>
+            <input type="date" v-model="form.fechaIngreso" name="fechaIngreso" />
+            <h2>Fecha de salida</h2>
+            <input type="date" v-model="form.fechaSalida" name="fechaSalida" />
+            <h2>Cantidad de personas</h2>
+            <input type="number" v-model="form.cantPersonas" name="cantPersonas" />
+            <h2>Cantidad de habitaciones</h2>
+            <input type="number" v-model="form.nroHabitaciones" name="nroHabitaciones" />
+            
+
+
+            <div id="izq">
+                <button id="ir">Calcular</button>
+                <button id="retro" v-on:click='guardar()' type="submit">Reservar</button>
+            </div>
+
         </div>
 
-    </div>
 </template>
+<script>
+
+import axios from "axios";
+
+export default {
+
+    name: 'CrearReserva',
+    data() {
+        return {
+            form: {
+                fechaIngreso: '',
+                fechaSalida: '',
+                cantPersonas: '',
+                nroHabitaciones: '',
+                idHotel: ''
+
+            }
+
+
+        }
+    },
+    
+    methods: {
+        guardar() {
+            this.form.idHotel = this.$route.params.idhotel
+            console.log(this.form)
+            axios.post("/reserva/new", this.form)
+                .then((result) => {
+                    console.log(result);
+                });
+
+        }
+
+    }
+}
+</script>
 <style>
 div#reserva {
     /* AzulO */
