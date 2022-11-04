@@ -3,11 +3,10 @@
     <div id="tarjeta-plan">
 
         <img id="foto-plan" :src="imgSrcP" alt="Frame-2" />
-        <div id="conte-tarjeta-plan">
+        <div id="conte-tarjeta-hotel">
             <h3 id="tarj3">{{titulo}}</h3>
             <h4 id="tarj4">${{subtitulo}}/Noche</h4>
-            <h5 id="tarj5">Noches</h5>
-            <sumaResta></sumaResta>
+            
         </div>
 
         <div id="btn-ent">
@@ -23,7 +22,7 @@
 </template>
  
 <script>
-import sumaResta from "@/components/suma-resta.vue";
+
 export default {
     name: 'tarjetaPlan',
     props: {
@@ -37,9 +36,7 @@ export default {
             imgSrcP: this.imagen
         }
     },
-    components: {
-        sumaResta
-    }, methods: {
+     methods: {
         async entrar(idhotel) {
             console.log(idhotel)
             await this.$router.push(`/verHotel/${idhotel}`)
@@ -63,11 +60,12 @@ div#tarjeta-plan {
     flex-direction: row;
 }
 
-div#conte-tarjeta-plan {
+div#conte-tarjeta-hotel {
     display: flex;
     flex-direction: column;
     margin: 2%;
     width: 50%;
+    justify-content: center;
 }
 
 img#foto-plan {
