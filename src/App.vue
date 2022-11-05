@@ -67,11 +67,11 @@ input {
   border-radius: 15px;
   width: 95%;
   border: 0;
-  padding: 2%;
+  padding: 1%;
   font-family: 'Varela';
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  font-size: 20px;
   align-items: center;
   outline: none;
 }
@@ -150,6 +150,24 @@ h3 {
 
   color: #292929;
 
+}
+button#acciones {
+    background: transparent;
+    border: 0;
+}
+select {
+    background: #EEEEEE;
+    box-shadow: 4px 4px 10px rgb(0 0 0 / 15%);
+    border-radius: 15px;
+    width: 97%;
+    border: 0;
+    padding: 1%;
+    font-family: 'Varela';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    align-items: center;
+    outline: none;
 }
 </style>
 

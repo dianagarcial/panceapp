@@ -33,24 +33,25 @@
             </div>
         </div>
         <h3>Imagen de presentacion</h3>
-        <input type="file"  />
+        <input type="text" v-model='form.imagen' />
 
 
         <h3>Imagen auxiliar 1</h3>
-        <input type="file" />
+        <input type="text" v-model='form.imagenaux1' />
         <h3>Imagen auxiliar 2</h3>
-        <input type="file"  />
+        <input type="text" v-model='form.imagenaux2' />
         <h3>Imagen auxiliar 3</h3>
-        <input type="file" />
+        <input type="text" v-model='form.imagenaux3'/>
         <div id="izq">
 
-            <button id="retro" @click="regresar">Cancelar</button>
-            <button id="ir" @click="ingreso">Agregar</button>
+            <button id="retro" @click="cancelar">Cancelar</button>
+            <button id="ir" @click="guardar">Agregar</button>
         </div>
     </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
 
     name: 'addHotel',
@@ -78,11 +79,37 @@ export default {
     },
 
     methods: {
-        ingreso() {
+        async guardar(){
+            // if(this.form.nombre===''||this.form.direccion===''|| this.form.imagen ==''|| this.form.latitud === '' || this.form.longitud ==='' || this.form.indicacion ===''){
+            //     this.$swal({
+            //             title: "Complete todos los campos",
+            //             icon: "warning",
+            //             button: "ok!",
+            //         });
+            // }
+            // else{
+                
+            console.log(this.form)
+            await axios.post("/hotel/new", this.form)
+                .then((result) => {
+                    console.log(result);
+                    this.$swal({
+                        title: "Se ha creado exitosamente la reserva!",
+                        text: "El valor de su reserva es...",
+                        icon: "success",
+                        button: "ok!",
+                    });
+                });
+
+            }
+
+
+        },
+        cancelar() {
             this.$router.push('/')
         }
 
-    }
+    // }
 }
 </script>
 

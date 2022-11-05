@@ -6,16 +6,6 @@
         </td>
         <td id="acciones">
             
-                <button @click="ver(id)" id="acciones">
-                    <img src="https://i.ibb.co/wgVS11g/akar-icons-eye-open.png" alt="Ver" height="30" width="30" />
-                </button>
-
-            
-<!--             
-                <router-link to="/admin">
-                    <img src="https://i.ibb.co/X3Tc1C8/ci-edit.png" alt="Editar" height="30" width="30" />
-                </router-link>
-             -->
             
              <button @click="borrar(id)" id="acciones">
                     <img src="https://i.ibb.co/0FRPzMQ/ant-design-delete-outlined.png" alt="Eliminar" height="30"
@@ -29,21 +19,19 @@
 
 
 export default {
-    name: "tableadmin",
+    name: "tableadminplatos",
     props: {
         id: String,
         nombre: String,
-        idrestaurante:String
+        idplato:String
+        
         
     },
     methods:{
-        async ver(idrestaurante){
-            await this.$router.push(`restaurante/edit/${idrestaurante}`)
-
-        },
-        async borrar(idrestaurante){
+        
+        async borrar(idplato){
             
-            this.axios.delete('/restaurante/'+ idrestaurante)
+            this.axios.delete('/plato/'+ idplato)
         .then((response) => {
           console.log(response.data)
           alert('eliminado')

@@ -109,7 +109,7 @@ const routes = [
             component: () => import('../views/admin/restaurante.vue')
           },
           {
-            path: 'edit',
+            path: 'edit/:idRestaurante',
             name: 'admin/restaurante/edit',
             component: () => import('../views/admin/editRestaurante.vue'),
           },
@@ -119,7 +119,7 @@ const routes = [
             component: () => import('../views/admin/addRestaurante.vue'),
           },
           {
-            path: 'addPlato',
+            path: 'addPlato/:idRestaurante',
             name: 'admin/restaurante/addPlato',
             component: () => import('../views/admin/addPlato.vue'),
           }

@@ -7,13 +7,13 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                  
                     <th>Nombre</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tableadmin v-for="(restaurante, key) in restaurantes" :key="key" :id="restaurante.id" :nombre="restaurante.nombre"  />
+                <tableadmin v-for="(restaurante, key) in restaurantes" :key="key" :id="restaurante._id" :nombre="restaurante.nombre"  />
             </tbody>
         </table>
     </div>

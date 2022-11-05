@@ -1,26 +1,28 @@
 <template >
     <tr id="table">
-        
+        <td>
+            {{id}}
+        </td>
         <td>
             {{nombre}}
         </td>
         <td id="acciones">
             
-                <button @click="ver(id)" id="acciones">
+                <router-link to="/admin">
                     <img src="https://i.ibb.co/wgVS11g/akar-icons-eye-open.png" alt="Ver" height="30" width="30" />
-                </button>
+                </router-link>
 
             
-<!--             
+            
                 <router-link to="/admin">
                     <img src="https://i.ibb.co/X3Tc1C8/ci-edit.png" alt="Editar" height="30" width="30" />
                 </router-link>
-             -->
             
-             <button @click="borrar(id)" id="acciones">
+            
+                <router-link to="/admin">
                     <img src="https://i.ibb.co/0FRPzMQ/ant-design-delete-outlined.png" alt="Eliminar" height="30"
                         width="30">
-             </button>
+                </router-link>
          
         </td>
     </tr>
@@ -29,31 +31,11 @@
 
 
 export default {
-    name: "tableadmin",
+    name: "tableadminhotel",
     props: {
         id: String,
         nombre: String,
-        idrestaurante:String
         
-    },
-    methods:{
-        async ver(idrestaurante){
-            await this.$router.push(`restaurante/edit/${idrestaurante}`)
-
-        },
-        async borrar(idrestaurante){
-            
-            this.axios.delete('/restaurante/'+ idrestaurante)
-        .then((response) => {
-          console.log(response.data)
-          alert('eliminado')
-        })
-        .catch((e) => {
-          console.log('error' + e);
-        })
-
-        }
-
     }
 }
 </script>

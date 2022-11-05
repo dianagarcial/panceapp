@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tableadmin v-for="(hotel, key) in hoteles"
+                <tableadminhotel v-for="(hotel, key) in hoteles"
                 :key="key" :id="hotel.id" :nombre="hotel.nombre" 
                 />
             </tbody>
@@ -24,12 +24,12 @@
 
 <script>
 import Botonprincipal from "@/components/Boton-principal.vue";
-import tableadmin from "@/components/tableadmin.vue";
+import tableadminhotel from "@/components/tableadminhotel.vue";
 export default {
     name: 'hotelandmin',
     components: {
         Botonprincipal,
-        tableadmin
+        tableadminhotel
     },
     data() {
         return {
