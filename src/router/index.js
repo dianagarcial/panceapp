@@ -96,10 +96,10 @@ const routes = [
             name: 'admin/hotel/add',
             component: () => import('../views/admin/addhotel.vue'),
           }
-
-
-        ]
+        ]  
+      
       },
+
       {
         path: 'restaurante',
         name: 'admin/restaurante',
@@ -125,6 +125,36 @@ const routes = [
           }
 
 
+        ]
+      },
+      {
+        path: 'ordenes',
+        name: 'admin/ordenes',
+        children: [
+          {
+            path: '',
+            component: () => import('../views/admin/Ordenesgenerales.vue')
+          },
+          {
+            path: 'view/:id',
+            name: 'admin/ordenes/especifica',
+            component: () => import('../views/admin/OrdenEspecifica.vue')
+          }
+        ]
+      },
+      {
+        path: 'reservas',
+        name: 'admin/reservas',
+        children: [
+          {
+            path: '',
+            component: () => import('../views/admin/Reservasgeneral.vue')
+          },
+          {
+            path: 'view/:id',
+            name: 'admin/reservas/especifica',
+            component: () => import('../views/admin/ReservaEspecifica.vue')
+          }
         ]
       },
 

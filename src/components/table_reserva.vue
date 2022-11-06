@@ -4,19 +4,14 @@
         <td>
             {{ nombre }}
         </td>
-        <td id="acciones">
-
-            <button @click="ver(id)" id="acciones">
-                <img src="https://i.ibb.co/wgVS11g/akar-icons-eye-open.png" alt="Ver" height="30" width="30" />
-            </button>
-
-
-
-            <button @click="borrar(id)" id="acciones">
-                <img src="https://i.ibb.co/0FRPzMQ/ant-design-delete-outlined.png" alt="Eliminar" height="30"
-                    width="30">
-            </button>
-
+        <td>
+            {{ ingreso }}
+        </td>
+        <td>
+            {{ salida }}
+        </td>
+        <td>
+            {{ total }}
         </td>
     </tr>
 </template>
@@ -24,32 +19,15 @@
 
 
 export default {
-    name: "tableadmin",
+    name: "table_reserva",
     props: {
-        id: String,
         nombre: String,
-        idrestaurante: String
-
-    },
-    methods: {
-        async ver(idrestaurante) {
-            await this.$router.push(`restaurante/edit/${idrestaurante}`)
-
-        },
-        async borrar(idrestaurante) {
-
-            this.axios.delete('/restaurante/' + idrestaurante)
-                .then((response) => {
-                    console.log(response.data)
-                    alert('eliminado')
-                })
-                .catch((e) => {
-                    console.log('error' + e);
-                })
-
-        }
+        ingreso: Date,
+        salida: Date,
+        total: Number
 
     }
+
 }
 </script>
 
@@ -81,6 +59,8 @@ table {
 td,
 th {
     padding: 1rem;
+    text-align: center;
+
 }
 
 

@@ -12,9 +12,8 @@
 
 
 
-            <button @click="borrar(id)" id="acciones">
-                <img src="https://i.ibb.co/0FRPzMQ/ant-design-delete-outlined.png" alt="Eliminar" height="30"
-                    width="30">
+            <button  id="acciones">
+                <img src="https://i.ibb.co/z24R7Cp/akar-icons-check.png" alt="Hecho" height="30" width="30">
             </button>
 
         </td>
@@ -24,7 +23,7 @@
 
 
 export default {
-    name: "tableadmin",
+    name: "table_pedidos",
     props: {
         id: String,
         nombre: String,
