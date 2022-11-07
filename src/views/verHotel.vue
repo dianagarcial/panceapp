@@ -15,6 +15,7 @@
             <img id="imgc" :src="hotel.imagenaux2" alt="unsplash-j-Ut4-MJXTJn0-6" />
             <img id="imgc" :src="hotel.imagenaux3" alt="unsplash-j-Ut4-MJXTJn0-7" />
         </div>
+        
 
         <h1>Reseñas</h1>
         <h2>Opiniones de otros clientes</h2>
@@ -22,7 +23,8 @@
             <Comentarios v-for="(comentario, key) in comentarios" :key="key" :nombre="comentario.nombre"
                 :comentario="comentario.comentario" :fecha="comentario.fecha" :imagen="comentario.imagen" />
         </div>
-        <Mapa imagen="https://i.ibb.co/ZzK7vff/Frame-5-1.png" :indicacion="hotel.indicacion"
+        
+        <Mapa  :latitud="latitud" :longitud="longitud" :indicacion="hotel.indicacion"
             :direccion="hotel.direccion" />
 
         <Reserva />
@@ -35,11 +37,14 @@ import Servicios from "@/components/Servicios.vue";
 import Comentarios from "../components/comentario.vue";
 import Mapa from "@/components/mapa.vue";
 import Reserva from "../components/Reserva.vue";
+
 export default {
     name: 'VerHoteles',
     data() {
         return {
             hotel: {},
+            latitud:'',
+            longitud:'',
             comentarios: [
                 {
                     nombre: 'Eloise Beier',
@@ -67,9 +72,11 @@ export default {
         Comentarios,
         Mapa,
         Reserva
+     
     },
     created() {
         this.listarHotel();
+        this.mostrar();
     },
     methods: {
         listarHotel() {
@@ -78,10 +85,16 @@ export default {
                 .then((response) => {
                     console.log(response.data.Hotel_)
                     this.hotel = response.data.Hotel_;
+                    this.latitud=parseFloat((response.data.Hotel_.latitud))
+                    this.longitud=parseFloat((response.data.Hotel_.longitud))
+                    console.log(parseFloat((response.data.Hotel_.latitud)))
                 })
                 .catch((e) => {
                     console.log('error' + e);
                 })
+        },
+        mostrar(){
+            console.log(this.hotel)
         }
 
     }

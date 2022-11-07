@@ -1,7 +1,7 @@
 <template>
     <div id="mapa">
 
-        <img :src="imgSrc" alt="Frame-5">
+        <mapa_api :latitud="latitud" :longitud="longitud"/>
         <div id="mapa-conte">
             <h1>Llegar es muy facil</h1>
             <h2>{{indicacion}}</h2>
@@ -12,14 +12,21 @@
 </template>
 
 <script>
-
+import mapa_api from "../components/mapa_api.vue"
 export default {
     name: 'Mapa',
     props: {
         imagen: String,
         indicacion: String,
-        direccion: String
+        direccion: String,
+        latitud:Number,
+        longitud:Number
+        
 
+    },
+    components: {
+        
+        mapa_api
     },
     data() {
         return {
