@@ -1,9 +1,8 @@
 <template>
     <div id="contenido">
-        <h1>Portal administrativo Travelapp</h1>
-        <h1>Administracion Hoteles</h1>
-        <h2>Aqui puedes administrar los Hoteles en travel</h2>
-        <Botonprincipal nombre="Añadir" link="hotel/add" />
+        <h1>Reservas Realizadas</h1>
+        
+        <h2>Aqui estan las reservas relizadas, para el detalle da click en ver reserva</h2>
         <table>
             <thead>
                 <tr>
@@ -23,12 +22,12 @@
 
 
 <script>
-import Botonprincipal from "@/components/Boton-principal.vue";
-import tableadminhotel from "@/components/tableadminhotel.vue";
+
+import tableadminhotel from "@/components/tableadminhotelres.vue";
 export default {
     name: 'hotelandmin',
     components: {
-        Botonprincipal,
+
         tableadminhotel
     },
     data() {

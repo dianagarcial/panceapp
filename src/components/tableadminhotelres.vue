@@ -12,11 +12,6 @@
 
 
 
-            <button @click="borrar(id)" id="acciones">
-                <img src="https://i.ibb.co/0FRPzMQ/ant-design-delete-outlined.png" alt="Eliminar" height="30"
-                    width="30">
-            </button>
-
         </td>
     </tr>
 </template>
@@ -31,21 +26,10 @@ export default {
         idhotel: String
     }, methods: {
         async ver(idhotel) {
-            await this.$router.push(`hotel/edit/${idhotel}`)
+            await this.$router.push(`reservas/ver/${idhotel}`)
 
         },
-        async borrar(idhotel) {
-
-            this.axios.delete('/hotel/' + idhotel)
-                .then((response) => {
-                    console.log(response.data)
-                    alert('eliminado')
-                })
-                .catch((e) => {
-                    console.log('error' + e);
-                })
-
-        }
+      
 
     }
 

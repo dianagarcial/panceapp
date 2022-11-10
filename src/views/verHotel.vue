@@ -24,7 +24,7 @@
                 :comentario="comentario.comentario" :fecha="comentario.fecha" :imagen="comentario.imagen" />
         </div>
         
-        <Mapa  :latitud="latitud" :longitud="longitud" :indicacion="hotel.indicacion"
+        <Mapa  :latitud="hotel.latitud" :longitud="hotel.longitud" :indicacion="hotel.indicacion"
             :direccion="hotel.direccion" />
 
         <Reserva />
@@ -43,8 +43,7 @@ export default {
     data() {
         return {
             hotel: {},
-            latitud:'',
-            longitud:'',
+            
             comentarios: [
                 {
                     nombre: 'Eloise Beier',
@@ -85,9 +84,9 @@ export default {
                 .then((response) => {
                     console.log(response.data.Hotel_)
                     this.hotel = response.data.Hotel_;
-                    this.latitud=parseFloat((response.data.Hotel_.latitud))
-                    this.longitud=parseFloat((response.data.Hotel_.longitud))
-                    console.log(parseFloat((response.data.Hotel_.latitud)))
+                    this.lat=parseFloat((response.data.Hotel_.latitud))
+                    this.long=parseFloat((response.data.Hotel_.longitud))
+                    console.log(this.hotel)
                 })
                 .catch((e) => {
                     console.log('error' + e);

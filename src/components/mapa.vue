@@ -1,7 +1,12 @@
 <template>
     <div id="mapa">
 
-        <mapa_api :latitud="latitud" :longitud="longitud"/>
+        <GMapMap :center="center" :zoom="90" map-type-id="terrain" style="width: 400px; height: 500px">
+        <GMapCluster>
+            <GMapMarker :key="index" v-for="(m, index) in markers" :position="m.position" :clickable="true"
+                :draggable="true" @click="center = m.position" />
+        </GMapCluster>
+    </GMapMap>
         <div id="mapa-conte">
             <h1>Llegar es muy facil</h1>
             <h2>{{indicacion}}</h2>
@@ -12,26 +17,46 @@
 </template>
 
 <script>
-import mapa_api from "../components/mapa_api.vue"
+
 export default {
     name: 'Mapa',
     props: {
-        imagen: String,
+
         indicacion: String,
         direccion: String,
-        latitud:Number,
-        longitud:Number
-        
+        latitud:String,
+        longitud:String 
+                },
 
-    },
-    components: {
-        
-        mapa_api
-    },
     data() {
         return {
-            imgSrc: this.imagen
+            
+            lat:'',
+            lng:'',
+            center:{},
+            markers:[]
+
         }
+    },
+    created() { 
+        this.mostrar();
+    },
+    methods: {
+        mostrar(){
+            this.lat = parseFloat(this.latitud)
+            this.lng= parseFloat(this.longitud)
+
+            this.center= { lat:this.lat,lng:this.lng},
+            this.markers= [
+                {
+                    position: {
+                        lat:this.lat,lng:this.lng
+                    },
+                }
+               
+            ]
+        }
+
     }
 
 }

@@ -148,6 +148,10 @@ const routes = [
         children: [
           {
             path: '',
+            component: () => import('../views/admin/ReservaHotel.vue')
+          },
+          {
+            path: 'ver/:id',
             component: () => import('../views/admin/Reservasgeneral.vue')
           },
           {

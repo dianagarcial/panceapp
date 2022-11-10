@@ -26,7 +26,7 @@
         </div>
 
         <Mapa imagen="https://i.ibb.co/ZzK7vff/Frame-5-1.png" :indicacion="mapa.indicacion"
-            :direccion="mapa.direccion" />
+            :direccion="mapa.direccion" :latitud="mapa.latitud" :longitud="mapa.longitud"  />
         <Reserva />
 
     </div>
@@ -149,6 +149,7 @@ export default {
                 .catch((e) => {
                     console.log('error' + e);
                 })
+                
         }
         
 

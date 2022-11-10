@@ -7,7 +7,7 @@
             <thead>
                 <tr>
 
-                    <th>Nombre Cliente</th>
+                    <th>Hotel</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -41,10 +41,10 @@ export default {
     },
     methods: {
         listarReservas() {
-            this.axios.get('/')//Aqui falta la ruta de Reservas
+            this.axios.get('/reserva/todos')//Aqui falta la ruta de Reservas
                 .then((response) => {
-                    console.log(response.data.Restaurante_)
-                    this.restaurantes = response.data.Restaurante_;
+                    console.log(response.data)
+                    this.reservas = response.data.Reserva_;
                 })
                 .catch((e) => {
                     console.log('error' + e);
