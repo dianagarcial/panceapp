@@ -146,17 +146,14 @@ const routes = [
         path: 'reservas',
         name: 'admin/reservas',
         children: [
+          
           {
             path: '',
-            component: () => import('../views/admin/ReservaHotel.vue')
-          },
-          {
-            path: 'ver/:id',
             component: () => import('../views/admin/Reservasgeneral.vue')
           },
           {
-            path: 'view/:id',
-            name: 'admin/reservas/especifica',
+            path: '/view/:idReserva',
+            name: 'admin/reservas/view',
             component: () => import('../views/admin/ReservaEspecifica.vue')
           }
         ]

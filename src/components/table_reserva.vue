@@ -5,13 +5,20 @@
             {{ nombre }}
         </td>
         <td>
-            {{ ingreso }}
+            {{ fing }}
         </td>
         <td>
-            {{ salida }}
+            {{ fsal }}
         </td>
         <td>
-            {{ total }}
+            {{ hotel }}
+        </td>
+        <td id="acciones">
+
+            <button @click="ver(idReserva)" id="acciones">
+                <img src="https://i.ibb.co/wgVS11g/akar-icons-eye-open.png" alt="Ver" height="30" width="30" />
+            </button>
+
         </td>
     </tr>
 </template>
@@ -20,11 +27,39 @@
 
 export default {
     name: "table_reserva",
+    
     props: {
+        idReserva:String,
         nombre: String,
         ingreso: Date,
         salida: Date,
-        total: Number
+        hotel: String
+
+    },
+    data(){
+        return{
+            fing:(this.ingreso).substr(0, 10),
+            fsal:(this.salida).substr(0, 10)
+        }
+
+    },
+    methods: {
+        async ver(idReserva) {
+            await this.$router.push(`reservas/view/${idReserva}`)
+
+        },
+        // async borrar(idhotel) {
+
+        //     this.axios.delete('/reserva/' + idhotel)
+        //         .then((response) => {
+        //             console.log(response.data)
+        //             alert('eliminado')
+        //         })
+        //         .catch((e) => {
+        //             console.log('error' + e);
+        //         })
+
+        // }
 
     }
 

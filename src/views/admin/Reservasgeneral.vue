@@ -7,27 +7,29 @@
             <thead>
                 <tr>
 
+                    <th>Cliente</th>
+                    <th>Fecha Ingreso</th>
+                    <th>Fecha Salida</th>
                     <th>Hotel</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <table_reserva v-for="(reserva, key) in reservas" :key="key" /> <!--Aqui va la tabla, entonces hay que traer la info del back-->
+                <table_reserva v-for="(reserva, key) in reservas" :key="key" :id="reserva._id" :nombre="reserva.usuario[0].nombre" :hotel="reserva.hotel[0].nombre" :ingreso="reserva.fechaIngreso" :salida="reserva.fechaSalida"/> <!--Aqui va la tabla, entonces hay que traer la info del back-->
             </tbody>
         </table>
-        <mapa_api />
+
     </div>
 </template>
 
 
 <script>
 import table_reserva from "@/components/table_reserva.vue";
-import mapa_api from "@/components/mapa_api.vue";
 export default {
     name: 'ReservaGeneral',
     components: {
-        table_reserva,
-        mapa_api
+        table_reserva
+       
     },
 
     //Aqui iria todo el cuento para traer las reservas, masomenos lo voy a intentar implementar

@@ -42,7 +42,7 @@ export default {
     },
     methods: {
         listarOrdenes() {
-            this.axios.get('/')//Aqui falta la ruta de ordenes
+            this.axios.get('/pedido/todos')//Aqui falta la ruta de ordenes
                 .then((response) => {
                     console.log(response.data.Restaurante_)
                     this.restaurantes = response.data.Restaurante_;
