@@ -67,14 +67,12 @@ export default {
                 localStorage.setItem('ids', result.data.ids);
                 localStorage.setItem('rol', result.data.rol);
                 localStorage.setItem('token-init-date', new Date().getTime() );
-                //window.location.reload()
+                window.location.reload()
                     
               
-                if (result.data.usuario.rol=== '0') {
-                    this.router.push('/admin')
-                } else {
-                    this.router.push('/')
-                }
+                
+                this.router.push('/')
+                
                 this.$swal({
                     toast: true,
                     position: 'top-right',

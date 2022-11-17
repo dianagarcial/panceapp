@@ -17,8 +17,8 @@
             <tbody>
                 <table_reserva v-for="(reserva, key) in reservas" :key="key" 
                 :id="reserva._id" 
-                :nombre="reserva.usuario[0].nombre"
-                :hotel="reserva.hotel[0].nombre" 
+                :nombre="reserva.usuario.nombre"
+                :hotel="reserva.hotel.nombre" 
                 :ingreso="reserva.fechaIngreso" 
                 :salida="reserva.fechaSalida"/> <!--Aqui va la tabla, entonces hay que traer la info del back-->
             </tbody>

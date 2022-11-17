@@ -258,7 +258,7 @@ function existToken() {
 }
 
 router.beforeEach((to, from, next) => {
-  if (to.path != '/ingreso' && existToken()) {
+  if (to.path != '/' && existToken()) {
       next();
 
       console.log('si')
@@ -274,7 +274,7 @@ router.beforeEach((to, from, next) => {
     //     icon: "warning",
     //     button: "ok!",
     // });
-    alert('Para acceder a esta pagina debe iniciar sesion')
+    
   }
 });
 
