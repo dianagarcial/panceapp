@@ -45,6 +45,7 @@ export default {
     },
     methods: {
         async ver(idReserva) {
+
             await this.$router.push(`reservas/view/${idReserva}`)
 
         },

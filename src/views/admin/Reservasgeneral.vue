@@ -16,7 +16,7 @@
             </thead>
             <tbody>
                 <table_reserva v-for="(reserva, key) in reservas" :key="key" 
-                :id="reserva._id" 
+                :idReserva="reserva._id" 
                 :nombre="reserva.usuario.nombre"
                 :hotel="reserva.hotel.nombre" 
                 :ingreso="reserva.fechaIngreso" 

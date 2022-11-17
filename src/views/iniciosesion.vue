@@ -9,7 +9,7 @@
             <input type="password" id="password" name="password" v-model="password" />
             <div id="izq">
                 <button id="retro" @click="registro()">Registrarse</button>
-                <button id="ir" type="submit"  @click="Login()">Ingresar</button>
+                <button id="ir"  @click="Login()">Ingresar</button>
             </div>
         </form>
     </div>

@@ -198,9 +198,9 @@ if(roles==='1'){
               component: () => import('../views/admin/Reservasgeneral.vue')
             },
             {
-              path: '/view/:idReserva',
+              path: 'view/:idReserva',
               name: 'admin/reservas/view',
-              component: () => import('../views/admin/ReservaEspecifica.vue')
+              component: () => import('../views/admin/viewReserva.vue')
             }
           ]
         },

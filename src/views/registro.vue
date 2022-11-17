@@ -128,7 +128,7 @@ export default {
                 // });
 
                 
-                this.router.push('/ingreso')
+                this.router.push('/')
                 this.$swal({
                     toast: true,
                     position: 'top-right',
