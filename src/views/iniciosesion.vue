@@ -64,6 +64,7 @@ export default {
                                 
                 }).then((result) => {
                 localStorage.setItem('token', result.data.token);
+                localStorage.setItem('ids', result.data.ids);
                 localStorage.setItem('token-init-date', new Date().getTime() );
                     
               
