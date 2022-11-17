@@ -9,20 +9,20 @@
             </div>
 
             <div id="nav-bar-link">
-
-                <router-link to="/restaurantes" id="resCli">Restaurantes</router-link>
-                <router-link to="/hoteles" id="hotCli">Hoteles</router-link>
-
+                
+                <router-link to="/restaurantes">Restaurantes</router-link>
+                <router-link to="/hoteles">Hoteles</router-link>
+               
 
                 <div id="imgs">
-                    <router-link to="/carrito" id="carCli"><img id="carrito"
+                    <router-link to="/carrito"><img id="carrito"
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHzSURBVHgB7ZjBbcIwFIZf0kqEGweEemt6Ay7lyJGO0AmAEboB3YBOULpBOwHpBE0vwDEDIJUJSP8nOVLqJrajxkkP/iTL2Mbh5ffz8zNEDodDiZdvDIfD0Pf9jzRNe/l+tFeHw+GRWsCX2ivZOMbzvFUYhj1qAV8yJC77YrfbnVEL/DBwv9+voeAdypILDD7lhmfUAp5qED65gZFz0UzwAjfUMJea8QglMzAcjUYpWQCrFaFaYiMm8pivmhgEwSs1AFZphrIt2ohKA+M4Pqk2Ts2EnU5nIXf6ulmQ/50aAmLcyn0mBjayzIJfYmgNhB/GUrixRYJNspE7tQayH0JF636I3yg8SrUGCt7ILoXqMUYG2lawTD1GeZLkGY/HX0WJRA0oTyjTJabz+WxlmVXqMcYGWgrYpb6XYWygjXioU48x9kEGyUKC6prqwSg7MlZQUJuKJuoxlQyscZm1vpdRaYkZJLEL+mN2jYvZerfbNZUlOf43xj7Il3pUz5yeo46xYe6L7hCaZ8zZ/8SRuUaYedDNuSBDBoPBFtVUNK9QJsfj8cV0Pr8gXi7Cx0B0Tfv9vodnRKp5VU6SSb4tlDQG358UdGuDfpU4GEntSmECF6KooFt736miIP/T8Jk9mH2QKsCZOSqek4grxJNpsHY4HAq+AfgGvxLpOZpxAAAAAElFTkSuQmCC"
                             alt="carrito" /></router-link>
-                    <router-link to="/ingreso" id="persona"><img id="perfil"
+                    <router-link to="/ingreso"><img id="perfil"
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANaSURBVHgB7Vi9ctpAEF4g/ptxgT124U6NGaCBPIFFmSq8QcgTGLp0jquUsZ/A+AniPEHkLqmMKxiG4txRwIQ0/BRAvk3kRIg73Z2UIuPxN3Mj6W5v9Wlvb3dPRM944khRAjiOk93c3HQzmYyzXC5LoeEHNG86nbaEECOKiVgEC4VCFYROU6mUayIPWQ+X606n0yRLWBHM5XJVWOsjbh2KBwGy5zZEjQjyUu7s7Fzhtkr/ACDZxIWJCp2slmA+n3ewlF8ovtVUYGtWdCQjCZqSg8wIL7tGa/nPLi4npP8oLclUUnJAazKZVMI7leen0+lPIFDWzBeY/1K109MRE98bkBMycgy2CkJQhWU0Ohzfv6XIyDrx9TVY74w0gHUavV7vq2q83+9PDw4OfkCXbnPl9/f374fDYSc8ILWgCTkGgvCNTmZ7e1srw/DD1xrWCLL1yHDHmmSIVqtlmkUcTgDhzjWCsN4bMgRvBJ3M8fGxbpP8AWencN8KwXK5nMXFJXPUdAIbGxuvyRAcnjgpBPtWCMKnjL/WV3gaZUV/rE4WwI52g8/hJXbJDlmOlb7froDzNuLgHZYta6NwsVg4wecXoXGH7MEB/QoOfgblvzIJdqTLxNDIFtBViiKYBJw5HL6JQ0yFNP3nSGxBv1C4RxP0N63xsnMr2fogRRGEQvYhbRxkUrhcwue8drvtRcliA7mQr5FZdcN4IBVB0iT2R2Lj8fjC9JyBosHDhRsfFeqcRjVW9VbeGXzgQD2bzb4rJhoVmDroyjhUR3vBj1/ZJH7e9GQT/bOEoIRgHdD1VvGO2/DKyHbxpWyySeViCj6KKoaa4Y41gnB6JiLC/UhBRiWYCRS6hOy0p4qDDUlfHf6TmGSxWGQda/mZXUgmL62oB4NB5/DwkAuHfLCfqw30Z3d3d7+NRqMpWYCrlKOjow+4fRceg94mVk5KUJlJtra22JGFZKiOJbqTFQgqcCzkOSSvbATi6blqbtJjJyv/DJmb4D8Yv8zidoL8XI+Ie/GPnRYk48IormZIA/jjCCczttIeHq0KWhXY4gjIr3Ai7GtlyQKB46hD8SDm83mj2+0ax9RYv998ojX6XQCY4BbELmyIPSLxD0yce3nZXQpZ1a+M+M+Dl+QH5jOePH4CAWyE2lLM0PQAAAAASUVORK5CYII="
                             alt="perfil" /></router-link>
-                    <button v-on:click='cerrar()' id='cerrar'>Cerrar</button>
-                </div>
+                        <button v-on:click='cerrar()'  >Cerrar</button>
+                        </div>
             </div>
         </div>
     </div>
@@ -31,34 +31,18 @@
 </template>
 
 <script>
-let roles= localStorage.getItem('rol')
-console.log(roles)
-document.addEventListener("DOMContentLoaded", function () {
-if(roles==='0'){
-    document.getElementById('resCli').style.display='none'
-    document.getElementById('hotCli').style.display='none'
-    document.getElementById('carCli').style.display='none'
-}else if(roles===null){
-    document.getElementById('resCli').style.display='none'
-    document.getElementById('hotCli').style.display='none'
-    document.getElementById('carCli').style.display='none'
-    document.getElementById('cerrar').style.display='none'
-    document.getElementById('persona').style.display='none'
-}
-});
-
 export default {
-    name: 'Nav',
+    name:'Nav',
     methods: {
         cerrar() {
-            localStorage.removeItem('token');
-            localStorage.removeItem('token-init-date');
-            localStorage.removeItem('rol');
-            localStorage.removeItem('ids');
+            localStorage.removeItem( 'token' );
+            localStorage.removeItem( 'token-init-date' );
+            localStorage.removeItem( 'rol' );
+            localStorage.removeItem( 'ids' );
             this.$router.push(`/ingreso`)
 
-        }
     }
+}
 }
 
 </script>
@@ -119,7 +103,7 @@ div#nav-bar-link {
     margin-left: 5%;
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content:end;
     align-items: center;
     text-decoration: none;
     gap: 20px

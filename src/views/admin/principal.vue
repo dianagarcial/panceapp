@@ -14,6 +14,7 @@
     </div>
 </template>
 <script>
+//window.location.reload()
 import Botonprincipal from "@/components/Boton-principal.vue";
 export default {
     name: 'adminprincipal',
@@ -34,7 +35,8 @@ export default {
             ]
         }
 
-    }
+    },
+    
 }
 </script>
 <style>

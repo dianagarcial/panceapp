@@ -15,7 +15,12 @@
                 </tr>
             </thead>
             <tbody>
-                <table_reserva v-for="(reserva, key) in reservas" :key="key" :id="reserva._id" :nombre="reserva.usuario[0].nombre" :hotel="reserva.hotel[0].nombre" :ingreso="reserva.fechaIngreso" :salida="reserva.fechaSalida"/> <!--Aqui va la tabla, entonces hay que traer la info del back-->
+                <table_reserva v-for="(reserva, key) in reservas" :key="key" 
+                :id="reserva._id" 
+                :nombre="reserva.usuario[0].nombre"
+                :hotel="reserva.hotel[0].nombre" 
+                :ingreso="reserva.fechaIngreso" 
+                :salida="reserva.fechaSalida"/> <!--Aqui va la tabla, entonces hay que traer la info del back-->
             </tbody>
         </table>
 
@@ -45,7 +50,7 @@ export default {
         listarReservas() {
             this.axios.get('/reserva/todos')//Aqui falta la ruta de Reservas
                 .then((response) => {
-                    console.log(response.data)
+                    console.log(response.data.Reserva_)
                     this.reservas = response.data.Reserva_;
                 })
                 .catch((e) => {

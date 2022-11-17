@@ -36,6 +36,7 @@ export default {
             center:{},
             markers:[]
 
+
         }
     },
     created() { 
@@ -43,6 +44,7 @@ export default {
     },
     methods: {
         mostrar(){
+            
             this.lat = parseFloat(this.latitud)
             this.lng= parseFloat(this.longitud)
 
