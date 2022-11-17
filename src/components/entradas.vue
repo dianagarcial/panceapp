@@ -4,7 +4,7 @@
         <h1>Entradas</h1>
         <h2>Selecciona uno de los platos a continuacion</h2>
         <Pgeneral v-for="(producto, key) in productos" :key="key" :titulo="producto.nombre"
-            :subtitulo="producto.precio" :imagen="producto.imagen" />
+            :subtitulo="producto.precio" :imagen="producto.imagen" :id="producto._id" />
     </div>
 
 </template>

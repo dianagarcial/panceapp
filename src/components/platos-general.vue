@@ -7,11 +7,10 @@
             <h3 id="tarj3">{{titulo}}</h3>
             <h4 id="tarj4">${{subtitulo}}</h4>
             <h5 id="tarj5">Cantidad</h5>
-            <sumaResta/>
         </div>
 
         <div id="btn-ent">
-            <button id="btn-ent">Pedir</button>
+            <button id="btn-ent" @click="addCartItem(id)" >Pedir</button>
         </div>
 
 
@@ -19,23 +18,25 @@
 
 </template>
 <script>
-import sumaResta from "@/components/suma-resta.vue";
+
+import { mapActions } from 'vuex'
+
 export default {
     name: 'tarjetaPlan',
     props: {
         titulo: String,
         subtitulo: String,
-        imagen: String
-
+        imagen: String, 
+        id: String
     },
     data() {
         return {
             imgSrc: this.imagen
         }
     },
-    components: {
-        sumaResta
-    }
+    methods: {
+    ...mapActions(["addCartItem"]),
+  },
 
 }
 </script>
