@@ -78,19 +78,21 @@ export default {
         this.mostrar();
     },
     methods: {
-        listarHotel() {
+        async listarHotel() {
             this.hot = this.$route.params.idhotel;
-            this.axios.get(`/hotel/${this.hot}`)
+            await this.axios.get(`/hotel/${this.hot}`)
                 .then((response) => {
                     console.log(response.data.Hotel_)
                     this.hotel = response.data.Hotel_;
                     this.lat=parseFloat((response.data.Hotel_.latitud))
                     this.long=parseFloat((response.data.Hotel_.longitud))
                     console.log(this.hotel)
+                
                 })
                 .catch((e) => {
                     console.log('error' + e);
                 })
+
         },
         mostrar(){
             console.log(this.hotel)

@@ -35,7 +35,8 @@ export default {
                 fechaSalida: '',
                 cantPersonas: '',
                 nroHabitaciones: '',
-                idHotel: ''
+                idHotel: '',
+                ids:''
 
             }
 
@@ -56,7 +57,8 @@ export default {
 
             
             this.form.idHotel = this.$route.params.idhotel
-            console.log(this.form)
+            this.form.ids=localStorage.getItem('ids')
+            console.log(this.form.ids)
             await axios.post("/reserva/new", this.form)
                 .then((result) => {
                     console.log(result);

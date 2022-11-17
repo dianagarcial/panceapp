@@ -9,7 +9,7 @@
             <input type="password" id="password" name="password" v-model="password" />
             <div id="izq">
                 <button id="retro" @click="registro()">Registrarse</button>
-                <button id="ir" type="submit">Ingresar</button>
+                <button id="ir" type="submit"  @click="Login()">Ingresar</button>
             </div>
         </form>
     </div>
@@ -64,14 +64,15 @@ export default {
                                 
                 }).then((result) => {
                 localStorage.setItem('token', result.data.token);
+                localStorage.setItem('ids', result.data.ids);
+                localStorage.setItem('rol', result.data.rol);
                 localStorage.setItem('token-init-date', new Date().getTime() );
+                window.location.reload()
                     
               
-                if (result.data.usuario.rol=== '0') {
-                    this.router.push('/admin')
-                } else {
-                    this.router.push('/')
-                }
+                
+                this.router.push('/')
+                
                 this.$swal({
                     toast: true,
                     position: 'top-right',
