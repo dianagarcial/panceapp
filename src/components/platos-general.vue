@@ -4,13 +4,13 @@
 
         <img id="foto-plan" :src="imgSrc" alt="Frame-2" />
         <div id="conte-tarjeta-plan">
-            <h3 id="tarj3">{{titulo}}</h3>
-            <h4 id="tarj4">${{subtitulo}}</h4>
+            <h3 id="tarj3">{{ titulo }}</h3>
+            <h4 id="tarj4">${{ subtitulo }}</h4>
             <h5 id="tarj5">Cantidad</h5>
         </div>
 
         <div id="btn-ent">
-            <button id="btn-ent" @click="addCartItem(id)" >Pedir</button>
+            <button id="btn-ent" @click="addCartItem(id)">Pedir</button>
         </div>
 
 
@@ -26,7 +26,7 @@ export default {
     props: {
         titulo: String,
         subtitulo: String,
-        imagen: String, 
+        imagen: String,
         id: String
     },
     data() {
@@ -35,11 +35,12 @@ export default {
         }
     },
     methods: {
-    ...mapActions(["addCartItem"]),
-  },
+        ...mapActions(["addCartItem"]),
+    },
 
 }
 </script>
+
 <style>
 div#tarjeta-plan {
     /* Blanco/Blanco2 */
