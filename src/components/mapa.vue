@@ -31,10 +31,12 @@ export default {
     data() {
         return {
             
-            lat:'3.3686094765940613',
-            lng:'-76.52923721786082',
+            lat:'',
+            lng:'',
             center:{},
             markers:[]
+
+
 
 
         }
@@ -43,20 +45,35 @@ export default {
         this.mostrar();
     },
     methods: {
-        mostrar(){
+        async mostrar(){
             
             
 
             console.log(this.lat)
 
-            if (this.lat === isNaN){
-                this.lat='3.3686094765940613'
+            
+            console.log(this.lat)
+            console.log(this.latitud)
+
+            if (this.latitud === undefined || this.longitud === undefined){
+             
+
+                
+                this.lat=3.3686094765940613
+                this.lng=-76.52923721786082
+
+            }else{
+                this.lat = parseFloat(this.latitud)
+                this.lng= parseFloat(this.longitud)
             }
+            
+
+            
+            
+
+            
+
             console.log(this.lat)
-
-            this.lat = parseFloat(this.latitud)
-            this.lng= parseFloat(this.longitud)
-
 
             this.center= { lat:this.lat,lng:this.lng},
             this.markers= [

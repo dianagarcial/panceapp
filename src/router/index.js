@@ -140,7 +140,7 @@ if(roles==='1'){
             {
               path: 'edit/:idHotel',
               name: 'admin/hotel/edit',
-              component: () => import('../views/admin/editRestaurante.vue'),
+              component: () => import('../views/admin/editHotel.vue'),
             },
           ]  
         

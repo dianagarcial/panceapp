@@ -6,7 +6,7 @@
         <div id="conte-tarjeta-plan">
             <h3 id="tarj3">{{ titulo }}</h3>
             <h4 id="tarj4">${{ subtitulo }}</h4>
-            <h5 id="tarj5">Cantidad</h5>
+           
         </div>
 
         <div id="btn-ent">

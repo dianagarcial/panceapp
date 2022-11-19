@@ -13,9 +13,9 @@
 
 
 
-        <div id="izq">
-            <button id="ir">Calcular</button>
-            <button id="retro" v-on:click='guardar()' type="submit">Reservar</button>
+        <div id="izq-reser">
+            
+            <button id="ir" v-on:click='guardar()' type="submit">Reservar</button>
         </div>
 
     </div>
@@ -89,5 +89,12 @@ div#reserva {
     padding: 10%;
     padding-top: 7%;
 
+}
+div#izq-reser {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 3%;
+    margin-right: 3%;
 }
 </style>

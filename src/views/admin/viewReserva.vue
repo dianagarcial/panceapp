@@ -1,30 +1,81 @@
 <template>
     <div id="contenido">
         <h1>Reserva</h1>
-        
-        <h2>Aqui estan los detalles de la reserva</h2>
-        
+
+        <h2>Aqui estan los detalles de la reserva No. {{reservaN}}</h2>
+
         <table>
             <thead>
                 <tr>
 
-                    <th>Nombre Plato</th>
-                    <th>Acciones</th>
+                    <th id="tit">Item</th>
+                    <th id="tit">Valor</th>
                 </tr>
             </thead>
             <tbody>
                 <tr id="table">
 
                     <td>
-                        {{ nombre }}
+                        Cliente
                     </td>
-                    <td id="acciones">
+                    <td>
 
+                        {{ form.cliente }}
 
-                        <button @click="borrar(id)" id="acciones">
-                            <img src="https://i.ibb.co/0FRPzMQ/ant-design-delete-outlined.png" alt="Eliminar"
-                                height="30" width="30">
-                        </button>
+                    </td>
+                </tr>
+                <tr id="table">
+
+                    <td>
+                        Hotel
+                    </td>
+                    <td >
+
+                        {{ form.hotel }}
+
+                    </td>
+                </tr>
+                <tr id="table">
+
+                    <td>
+                        Fecha de ingreso
+                    </td>
+                    <td >
+
+                        {{ form.ingreso }}
+
+                    </td>
+                </tr>
+                <tr id="table">
+
+                    <td>
+                        Fecha de salida
+                    </td>
+                    <td >
+
+                        {{ form.salida }}
+
+                    </td>
+                </tr>
+                <tr id="table">
+
+                    <td>
+                        No. de Habitaciones
+                    </td>
+                    <td>
+
+                        {{ form.habitaciones }}
+
+                    </td>
+                </tr>
+                <tr id="table">
+
+                    <td>
+                        No. de personas
+                    </td>
+                    <td >
+
+                        {{ form.personas }}
 
                     </td>
                 </tr>
@@ -32,41 +83,8 @@
         </table>
 
 
-        <h1>Editar Restaurante</h1>
-        <h2>Aqui puedes editar la información del restaurante</h2>
-
-
-        <h3>Nombre del Restaurante</h3>
-        <input v-model="form.nombre" />
-
-
-
-        <h3>Dirección</h3>
-        <input v-model="form.direccion" />
-
-        <h3>Dirección</h3>
-        <textarea v-model="form.indicacion" />
-
-
-        <div id="row-form">
-            <div id="colum-form">
-                <h3>Latitud</h3>
-                <input v-model="form.latitud" />
-            </div>
-            <div id="colum-form">
-                <h3>Longitud</h3>
-                <input v-model="form.longitud" />
-            </div>
-
-        </div>
-        <h3>Imagen</h3>
-        <input v-model="form.imagen" />
-        <div id="izq">
-
-            <button id="retro" @click="cancelar()">Cancelar</button>
-            <button id="ir" @click="actualizar()">Editar</button>
-        </div>
     </div>
+
 </template>
 
 
@@ -75,18 +93,18 @@
 
 export default {
     name: 'Editrestaurante',
-    
+
     data() {
         return {
             platos: [],
-            nombreRes: "",
+            reservaN: "",
             form: {
-                nombre: '',
-                direccion: '',
-                latitud: '',
-                longitud: '',
-                indicacion: '',
-                imagen: ''
+                cliente: '',
+                hotel: '',
+                ingreso: '',
+                salida: '',
+                habitaciones: '',
+                personas: ''
 
             }
 
@@ -102,23 +120,21 @@ export default {
             this.$router.push('/admin/restaurante')
         },
         async listarRestaurante() {
-            this.idResta = this.$route.params.idRestaurante
+            this.idResta = this.$route.params.idReserva
             console.log(this.idResta)
 
-            await this.axios.get(`/restaurante/${this.idResta}`)
+            await this.axios.get(`/reserva/${this.idResta}`)
                 .then((response) => {
-                    console.log(response.data.Restaurante_.plato)
-                    this.platos = response.data.Restaurante_.plato;
+                    console.log(response.data)
+                    // this.platos = response.data.Restaurante_.plato;
 
-
-
-                    this.nombreRes = response.data.Restaurante_.nombre
-                    this.form.nombre = response.data.Restaurante_.nombre
-                    this.form.direccion = response.data.Restaurante_.direccion
-                    this.form.latitud = response.data.Restaurante_.latitud;
-                    this.form.longitud = response.data.Restaurante_.longitud
-                    this.form.indicacion = response.data.Restaurante_.indicacion
-                    this.form.imagen = response.data.Restaurante_.imagen
+                    this.reservaN = response.data.Reserva_._id
+                    this.form.cliente = response.data.Reserva_.usuario[0].nombre
+                    this.form.hotel = response.data.Reserva_.hotel[0].nombre
+                    this.form.ingreso = (response.data.Reserva_.fechaIngreso).toString().substr(0, 10)
+                    this.form.salida = (response.data.Reserva_.fechaSalida).toString().substr(0, 10)
+                    this.form.habitaciones = response.data.Reserva_.nroHabitaciones
+                    this.form.personas = response.data.Reserva_.cantPersonas
 
                 })
                 .catch((e) => {
@@ -165,4 +181,59 @@ div#colum-form {
     width: 45%;
 }
 
+div#table {
+    margin: 0 auto;
+    width: 90%;
+    align-self: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+
+    align-self: center;
+    width: 100%;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* td, th {
+    padding: 1rem;
+    text-align: left;
+} */
+
+
+
+thead tr {
+    background-color: #78E3FD;
+    color: #292929;
+    text-align: center;
+    height: auto;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+    height: auto
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+td#acciones {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin: auto;
+}
 </style>

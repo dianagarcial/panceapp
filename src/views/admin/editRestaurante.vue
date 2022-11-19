@@ -128,7 +128,11 @@ export default {
             this.axios.put(`/restaurante/${this.id}`, this.form)
         .then((response) => {
           console.log(response.data)
-          alert('actualizado')
+          this.$swal({
+                        title: "Restaurante actualizado con exito",
+                        icon: "success",
+                        button: "ok!",
+                    });
           this.$router.push(`/admin/restaurante`)
         })
         .catch((e) => {
