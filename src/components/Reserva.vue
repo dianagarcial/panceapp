@@ -64,7 +64,6 @@ export default {
                     console.log(result);
                     this.$swal({
                         title: "Se ha creado exitosamente la reserva!",
-                        text: "El valor de su reserva es...",
                         icon: "success",
                         button: "ok!",
                     });
