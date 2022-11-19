@@ -31,8 +31,8 @@ export default {
     data() {
         return {
             
-            lat:'',
-            lng:'',
+            lat:'3.3686094765940613',
+            lng:'-76.52923721786082',
             center:{},
             markers:[]
 
@@ -45,8 +45,18 @@ export default {
     methods: {
         mostrar(){
             
+            
+
+            console.log(this.lat)
+
+            if (this.lat === isNaN){
+                this.lat='3.3686094765940613'
+            }
+            console.log(this.lat)
+
             this.lat = parseFloat(this.latitud)
             this.lng= parseFloat(this.longitud)
+
 
             this.center= { lat:this.lat,lng:this.lng},
             this.markers= [

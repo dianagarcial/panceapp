@@ -15,10 +15,12 @@ export default {
     },
     data() {
         return {
-            lat:'',
-            lng:'',
+            lat:'3.3686094765940613',
+            lng:'-76.52923721786082',
             center:{},
             markers:[]
+
+            
             
         }
     },
@@ -29,6 +31,8 @@ export default {
         mostrar(){
             this.lat = this.latitud
             this.lng= this.longitud
+
+            console.log(this.lat)
 
             this.center= { lat:this.lat,lng:this.lng},
             this.markers= [
