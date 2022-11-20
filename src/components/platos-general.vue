@@ -2,15 +2,15 @@
 
     <div id="tarjeta-plan">
 
-        <img id="foto-plan" :src="imgSrc" alt="Frame-2" />
+        <img id="foto-plan" :src="productoA.imagen" alt="Frame-2" />
         <div id="conte-tarjeta-plan">
-            <h3 id="tarj3">{{ titulo }}</h3>
-            <h4 id="tarj4">${{ subtitulo }}</h4>
-           
+            <h3 id="tarj3">{{ productoA.nombre }}</h3>
+            <h4 id="tarj4">${{ productoA.precio }}</h4>
+
         </div>
 
         <div id="btn-ent">
-            <button id="btn-ent" @click="addCartItem(id)">Pedir</button>
+            <button id="btn-ent" @click="addToCart(productoA)">Pedir</button>
         </div>
 
 
@@ -19,23 +19,16 @@
 </template>
 <script>
 
-import { mapActions } from 'vuex'
+//import { mapActions } from 'vuex'
 
 export default {
     name: 'tarjetaPlan',
-    props: {
-        titulo: String,
-        subtitulo: String,
-        imagen: String,
-        id: String
-    },
-    data() {
-        return {
-            imgSrc: this.imagen
-        }
-    },
+    props: ["productoA"],
     methods: {
-        ...mapActions(["addCartItem"]),
+        addToCart(item) {
+            this.$store.commit('addToCart', item);
+        console.log(item)
+    }
     },
 
 }

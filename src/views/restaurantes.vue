@@ -144,6 +144,7 @@ export default {
             this.axios.get(`/restaurante/${this.resta}`)
                 .then((response) => {
                     console.log(response.data.Restaurante_)
+                    console.log("holi")
                     this.mapa = response.data.Restaurante_;
                 })
                 .catch((e) => {

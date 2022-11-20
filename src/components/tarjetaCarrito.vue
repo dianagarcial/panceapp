@@ -2,12 +2,12 @@
 
     <div id="tarjeta-carrito">
 
-        <img id="foto-carrito" :src="imgSrcP" alt="Frame-2" />
-        <h3 id="nombre">{{nombre}}</h3>
-        <h4 id="numero">{{numero}}</h4>
-        <h4 id="subtotal">${{subtotal}}</h4>
-        <h4 id="total">${{total}}</h4>
-        <img id="delete" src="https://i.ibb.co/0CTc57h/Delete.png" alt="Delete" border="0" />
+        <img id="foto-carrito" :src="cartItem.imagen" alt="Frame-2" />
+        <h3 id="nombre">{{ cartItem.nombre }}</h3>
+        <h4 id="total">${{ cartItem.precio }}</h4>
+        <button @click="removeFromCart(this.$.vnode.key)" id="acciones">
+            <img src="https://i.ibb.co/0FRPzMQ/ant-design-delete-outlined.png" alt="Eliminar" height="30" width="30">
+        </button>
 
 
 
@@ -18,23 +18,20 @@
  
 <script>
 
+
 export default {
+
     name: 'tarjetaPlan',
-    props: {
-        nombre: String,
-        numero: String,
-        subtotal: String,
-        total: String,
-        imagen: String
-
-    }, data() {
-        return {
-            imgSrcP: this.imagen
-        }
-
-    }, methods: {
+    props: ['cartItem'],
+    methods: {
         entrar() {
             this.$router.push('/verHotel')
+
+        },
+
+        removeFromCart(key) {
+            this.$store.commit('removeFromCart', key);
+            console.log("borrado")
         }
     }
 

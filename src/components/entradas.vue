@@ -3,8 +3,7 @@
     <div id="contenidoEntrada" display="none">
         <h1>Entradas</h1>
         <h2>Selecciona uno de los platos a continuacion</h2>
-        <Pgeneral v-for="(producto, key) in productos" :key="key" :titulo="producto.nombre"
-            :subtitulo="producto.precio" :imagen="producto.imagen" :id="producto._id" />
+        <Pgeneral v-for="(producto, key) in productos" :key="key" :productoA="producto" />
     </div>
 
 </template>
@@ -35,6 +34,7 @@ export default {
                 .then((response) => {
                     console.log(response.data.platoTipo)
                     this.productos = response.data.platoTipo;
+                    console.log("holi2")
                 })
                 .catch((e) => {
                     console.log('error' + e);

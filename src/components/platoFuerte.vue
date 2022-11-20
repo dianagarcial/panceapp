@@ -3,8 +3,7 @@
     <div id="contenidoPlatoF" display="none">
         <h1>Platos fuertes</h1>
         <h2>Selecciona uno de los platos a continuacion</h2>
-        <Pgeneral v-for="(producto, key) in productos" :key="key" :titulo="producto.nombre"
-            :subtitulo="producto.precio" :imagen="producto.imagen" />
+        <Pgeneral v-for="(producto, key) in productos" :key="key" :productoA="producto" />
     </div>
 
 </template>
