@@ -1,18 +1,36 @@
 <template>
     <div id="contenido">
-        <h1>Pedidos Realizados</h1>
+        <h1>Pedidos Pendientes</h1>
         
-        <h2>Aqui estan los pedidos relizados, para el detalle da click en ver pedidos, y los finalizas dando click en finalizar pedido</h2>
+        <h2>Aqui estan los pedidos pendientes, para el detalle da click en ver pedidos, y los finalizas dando click en finalizar pedido</h2>
         <table>
             <thead>
                 <tr>
 
                     <th>Nombre Cliente</th>
-                    <th>Acciones</th>
+                    <th>Fecha</th>
+                    <th>Ver pedido</th>
+                    <th>Finalizar</th>
                 </tr>
             </thead>
             <tbody>
-                <table_pedidos v-for="(orden, key) in ordenes" :key="key" /> <!--Aqui va la tabla, entonces hay que traer la info del back-->
+                <table_pedidos v-for="(orden, key) in ordenes" :key="key" :id="orden._id" :nombre="orden.usuario[0].nombre" :fecha="orden.fecha"  :estado="orden.estado"/> <!--Aqui va la tabla, entonces hay que traer la info del back-->
+            </tbody>
+        </table>
+        <h1>Pedidos Entregados</h1>
+        <h2>Aqui estan los pedidos entregados, para el detalle da click en ver pedidos, y los finalizas dando click en finalizar pedido</h2>
+        <table>
+            <thead>
+                <tr>
+
+                    <th>Nombre Cliente</th>
+                    <th>Fecha</th>
+                    <th>Ver pedido</th>
+                    <th>Finalizar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <table_pedidos v-for="(orden, key) in ordenes" :key="key" :id="orden._id" :nombre="orden.usuario[0].nombre" :fecha="orden.fecha"  :estado="orden.estado"/> <!--Aqui va la tabla, entonces hay que traer la info del back-->
             </tbody>
         </table>
     </div>
@@ -30,11 +48,8 @@ export default {
     //Aqui iria todo el cuento para traer las ordenes, maosmenos lo voy a intentar implementar
     data() {
         return {
-            ordenes: [
-                {
-                    "nombre": "holi"
-                }
-            ]
+            ordenes: []
+            
         }
     },
     created() {
@@ -42,10 +57,10 @@ export default {
     },
     methods: {
         listarOrdenes() {
-            this.axios.get('/pedido/todos')//Aqui falta la ruta de ordenes
+            this.axios.get('/orden/pendientes')//Aqui falta la ruta de ordenes
                 .then((response) => {
-                    console.log(response.data.Restaurante_)
-                    this.restaurantes = response.data.Restaurante_;
+                    console.log(response.data)
+                    this.ordenes = response.data.ordenPendiente;
                 })
                 .catch((e) => {
                     console.log('error' + e);

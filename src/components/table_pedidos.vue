@@ -4,11 +4,18 @@
         <td>
             {{ nombre }}
         </td>
-        <td id="acciones">
-
+        <td>
+            {{ fecha }}
+        </td>
+        <td>
+            
             <button @click="ver(id)" id="acciones">
                 <img src="https://i.ibb.co/wgVS11g/akar-icons-eye-open.png" alt="Ver" height="30" width="30" />
             </button>
+            
+        </td>
+        <td id="acciones">
+
 
 
 
@@ -27,12 +34,14 @@ export default {
     props: {
         id: String,
         nombre: String,
-        idrestaurante: String
+        fecha: String,
+        estado:Number
 
     },
     methods: {
-        async ver(idrestaurante) {
-            await this.$router.push(`restaurante/edit/${idrestaurante}`)
+        async ver(id) {
+            console.log(id)
+            await this.$router.push(`ordenes/view/${id}`)
 
         },
         async borrar(idrestaurante) {

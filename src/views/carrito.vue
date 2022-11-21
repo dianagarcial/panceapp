@@ -55,7 +55,7 @@ export default {
     
     methods:{
         async pagar(){
-            this.ids=localStorage.getItem('ids')
+            
 
             const fecha = new Date();
             let hoy=(fecha.toDateString())
@@ -64,10 +64,11 @@ export default {
             let form={
             plato: this.cart,
             fecha: this.fecha,
-            ids:this.ids,
+            ids:'',
             estado:0
             }
 
+            form.ids=localStorage.getItem('ids')
             if(this.cart.length===0){
                 alert('No hay productos')
             }else{

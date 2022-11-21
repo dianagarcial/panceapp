@@ -46,10 +46,12 @@ export default {
     },
     methods: {
         listarOrdenes() {
-            this.axios.get('/')//Aqui falta la ruta de ordenes
+            this.idOrden = this.$route.params.id
+            console.log(this.idOrden)
+            this.axios.get('/orden/'+ this.idOrden)//Aqui falta la ruta de ordenes
                 .then((response) => {
-                    console.log(response.data.Restaurante_)
-                    this.restaurantes = response.data.Restaurante_;
+                    console.log(response.data.Orden_)
+                    this.restaurantes = response.data.Orden_;
                 })
                 .catch((e) => {
                     console.log('error' + e);
