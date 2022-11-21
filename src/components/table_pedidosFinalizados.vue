@@ -5,9 +5,9 @@
             {{ nombre }}
         </td>
         <td>
-            {{ fecha }}
+            {{ fechaFor }}
         </td>
-        <td>
+        <td id="acciones">
             
             <button @click="ver(id)" id="acciones">
                 <img src="https://i.ibb.co/wgVS11g/akar-icons-eye-open.png" alt="Ver" height="30" width="30" />
@@ -25,8 +25,15 @@ export default {
     props: {
         id: String,
         nombre: String,
-        fecha: String,
+        fecha: Date,
         estado:Number
+
+    },
+    data(){
+        return{
+            fechaFor:(this.fecha).substr(0, 10)
+            
+        }
 
     },
     methods: {
@@ -95,6 +102,11 @@ td#acciones {
     justify-content: space-between;
     align-items: center;
     width: 30%;
+    margin: auto;
+}
+button#acciones {
+    background: transparent;
+    border: 0;
     margin: auto;
 }
 </style>
