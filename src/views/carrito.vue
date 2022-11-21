@@ -7,7 +7,7 @@
             <h3>${{ totalPrice }}</h3>
         </div>
         <div id="izq">
-            <button id="retro"  v-on:click="cancelar()">Cancelar</button>
+            <button id="retro" v-on:click="cancelar()">Cancelar</button>
             <button id="ir" v-on:click="pagar()">Pedir</button>
         </div>
     </div>
@@ -26,9 +26,9 @@ export default {
     data() {
         return {
             cart: [],
-            fecha:'',
-            ids:''
-            
+            fecha: '',
+            ids: ''
+
 
         }
     },
@@ -52,46 +52,43 @@ export default {
             return total;
         }
     },
-    
-    methods:{
-        async pagar(){
-            
+
+    methods: {
+        async pagar() {
+
 
             const fecha = new Date();
-            let hoy=(fecha.toDateString())
-            this.fecha= hoy
+            let hoy = (fecha.toDateString())
+            this.fecha = hoy
 
-            let form={
-            plato: this.cart,
-            fecha: this.fecha,
-            ids:'',
-            estado:0
+            let form = {
+                plato: this.cart,
+                fecha: this.fecha,
+                ids: '',
+                estado: 0
             }
 
-            form.ids=localStorage.getItem('ids')
-            if(this.cart.length===0){
+            form.ids = localStorage.getItem('ids')
+            if (this.cart.length === 0) {
                 alert('No hay productos')
-            }else{
-                
+            } else {
+
                 await axios.post("/orden/new", form)
-                .then((result) => {
-                    console.log(result);
-                    this.$swal({
-                        title: "Se ha realizado el pedido con exito!",
-                        icon: "success",
-                        button: "ok!",
+                    .then((result) => {
+                        console.log(result);
+                        this.$swal({
+                            title: "Se ha realizado el pedido con exito!",
+                            icon: "success",
+                            button: "ok!",
+                        });
                     });
-
-                   
-
-                });
 
             }
 
         },
-        cancelar(){
+        cancelar() {
             this.$router.push(`/restaurantes`)
-            
+
 
         }
     }
@@ -111,5 +108,4 @@ div#total {
     margin-left: 50%;
     justify-content: space-around;
 }
-
 </style>

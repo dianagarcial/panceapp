@@ -27,8 +27,22 @@ export default {
     methods: {
         addToCart(item) {
             this.$store.commit('addToCart', item);
-        console.log(item)
-    }
+            console.log(item)
+            this.$swal({
+                toast: true,
+                position: 'top-right',
+                iconColor: 'white',
+                customClass: {
+                    popup: 'colored-toast'
+                },
+                showConfirmButton: false,
+                timer: 1500,
+                background: '#a5dc86',
+                icon: 'success',
+                title: 'Agregado con exito'
+
+            });
+        }
     },
 
 }

@@ -32,6 +32,7 @@ export default {
         removeFromCart(key) {
             this.$store.commit('removeFromCart', key);
             console.log("borrado")
+            window.location.reload()
         }
     }
 
