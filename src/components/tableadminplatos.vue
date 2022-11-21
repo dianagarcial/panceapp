@@ -4,15 +4,7 @@
         <td>
             {{nombre}}
         </td>
-        <td id="acciones">
-            
-            
-             <button @click="borrar(id)" id="acciones">
-                    <img src="https://i.ibb.co/0FRPzMQ/ant-design-delete-outlined.png" alt="Eliminar" height="30"
-                        width="30">
-             </button>
-         
-        </td>
+        
     </tr>
 </template>
 <script>

@@ -13,7 +13,7 @@
                 <tr>
                     
                     <th>Nombre Plato</th>
-                    <th>Acciones</th>
+                   
                 </tr>
             </thead>
             <tbody>

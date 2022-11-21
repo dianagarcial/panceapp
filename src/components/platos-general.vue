@@ -63,12 +63,7 @@ div#tarjeta-plan {
     flex-direction: row;
 }
 
-div#conte-tarjeta-plan {
-    display: flex;
-    flex-direction: column;
-    margin: 2%;
-    width: 50%;
-}
+
 
 img#foto-plan {
     margin: 3%;
@@ -148,5 +143,13 @@ div#btn-ent {
     margin-bottom: 3%;
     margin-right: 5%;
     width: 10%;
+}
+
+div#conte-tarjeta-plan {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    width: 50%;
+    justify-content: center;
 }
 </style>
