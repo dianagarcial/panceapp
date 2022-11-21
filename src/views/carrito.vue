@@ -7,8 +7,8 @@
             <h3>${{ totalPrice }}</h3>
         </div>
         <div id="izq">
-            <button id="retro">Cancelar</button>
-            <button id="ir">Pagar</button>
+            <button id="retro"  v-on:click="cancelar()">Cancelar</button>
+            <button id="ir" v-on:click="pagar()">Pedir</button>
         </div>
     </div>
 </template>
@@ -16,7 +16,7 @@
 <script>
 import TarjetaCarrito from "../components/tarjetaCarrito.vue";
 //import TotalCarrito from "@/components/totalcarrito.vue"
-
+import axios from "axios";
 export default {
     name: 'Carrito',
     components: {
@@ -25,7 +25,11 @@ export default {
     },
     data() {
         return {
-            cart: []
+            cart: [],
+            fecha:'',
+            ids:''
+            
+
         }
     },
     mounted() {
@@ -46,6 +50,48 @@ export default {
             }
 
             return total;
+        }
+    },
+    
+    methods:{
+        async pagar(){
+            this.ids=localStorage.getItem('ids')
+
+            const fecha = new Date();
+            let hoy=(fecha.toDateString())
+            this.fecha= hoy
+
+            let form={
+            plato: this.cart,
+            fecha: this.fecha,
+            ids:this.ids,
+            estado:0
+            }
+
+            if(this.cart.length===0){
+                alert('No hay productos')
+            }else{
+                
+                await axios.post("/orden/new", form)
+                .then((result) => {
+                    console.log(result);
+                    this.$swal({
+                        title: "Se ha realizado el pedido con exito!",
+                        icon: "success",
+                        button: "ok!",
+                    });
+
+                   
+
+                });
+
+            }
+
+        },
+        cancelar(){
+            this.$router.push(`/restaurantes`)
+            
+
         }
     }
 

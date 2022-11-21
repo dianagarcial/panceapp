@@ -56,6 +56,7 @@ export default {
             localStorage.removeItem('token-init-date');
             localStorage.removeItem('rol');
             localStorage.removeItem('ids');
+            localStorage.removeItem('platos');
             window.location.href='http://localhost:8080/#/'
             window.location.reload()
 
