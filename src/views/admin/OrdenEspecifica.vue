@@ -2,30 +2,26 @@
     <div id="contenido">
         <h1>Pedidos Especifico</h1>
         
-        <h2>Aqui esta el pedido x</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre plato</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <table_orden v-for="(orden, key) in ordenes" :key="key" :nombre="orden.nombre" :cantidad="orden.cantidad" /> <!--Aqui va la tabla, entonces hay que traer la info del back-->
-            </tbody>
-        </table>
+        <h2>Aqui esta el pedido No.{{ordenes.id}}</h2>
+        <tarjetaPedido v-for="(orden, key) in platos" :key="key" :ordenes="orden" /> <!--Aqui va la tabla, entonces hay que traer la info del back-->
+        <br/>
+        <h1>Datos del Cliente</h1>
+        <h2><b>Nombre:  </b>  {{ordenes.usuario[0].nombre}}</h2>
+        <h2><b>Celular:  </b>  {{ordenes.usuario[0].celular}}</h2>
+        <h2><b>Direccion:  </b>  {{ordenes.usuario[0].direccion}}</h2>
+
+        
+      
     </div>
 </template>
 
 
 <script>
-import table_orden from "@/components/table_orden.vue";
+import tarjetaPedido from "@/components/tarjetaPedidos.vue";
 export default {
     name: 'OrdenEspecifica',
     components: {
-        table_orden
+        tarjetaPedido
     },
 
     //Aqui iria todo el cuento para traer las ordenes, maosmenos lo voy a intentar implementar
@@ -33,12 +29,11 @@ export default {
         return {
             ordenes: [
                 {
-                    "nombre": "holi",
-                    "cantidad": 2,
-                    "precio": 20000,
-                    "total": 40000
+                    id:'',
+
                 }
-            ]
+            ],
+            platos:[]
         }
     },
     created() {
@@ -51,7 +46,10 @@ export default {
             this.axios.get('/orden/'+ this.idOrden)//Aqui falta la ruta de ordenes
                 .then((response) => {
                     console.log(response.data.Orden_)
-                    this.restaurantes = response.data.Orden_;
+                    this.ordenes = response.data.Orden_;
+                    this.ordenes.id= response.data.Orden_._id
+                    this.ordenes.usuario= response.data.Orden_.usuario
+                    this.platos= response.data.Orden_.plato
                 })
                 .catch((e) => {
                     console.log('error' + e);

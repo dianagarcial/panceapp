@@ -14,16 +14,7 @@
             </button>
             
         </td>
-        <td id="acciones">
-
-
-
-
-            <button  @click="finalizar(id)" id="acciones">
-                <img src="https://i.ibb.co/z24R7Cp/akar-icons-check.png" alt="Hecho" height="30" width="30">
-            </button>
-
-        </td>
+        
     </tr>
 </template>
 <script>
@@ -38,26 +29,13 @@ export default {
         estado:Number
 
     },
-    
     methods: {
         async ver(id) {
             console.log(id)
             await this.$router.push(`ordenes/view/${id}`)
 
         },
-        async finalizar(id) {
-
-            this.axios.put('/orden/' + id)
-                .then((response) => {
-                    console.log(response.data)
-                    window.location.reload()
-                })
-                .catch((e) => {
-                    console.log('error' + e);
-                })
-
-        }
-
+       
     }
 }
 </script>
